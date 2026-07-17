@@ -702,5 +702,570 @@ Error generating stack: `+a.message+`
 })();
 </script>
 
+<script id="aside-mel-metrics-polish-v1">
+/**
+ * Aside Mel Metrics polish v1
+ * Persistent UI changes from design review session 2026-07-18.
+ * Safe to re-run; idempotent.
+ */
+(function () {
+  if (window.__asideMelMetricsPolishV1) return;
+  window.__asideMelMetricsPolishV1 = true;
+
+  const T = {
+    border: '#E5E5E5',
+    muted: '#737373',
+    fg: '#0A0A0A',
+    primary: '#5A5FF2',
+    primarySoft: '#EEF0FF',
+    primaryBorder: '#D7DAFF',
+    mutedBg: '#F5F5F5',
+    destructive: 'hsl(0 84% 60%)',
+  };
+
+  function ensureStyle() {
+    let style = document.getElementById('aside-mel-metrics-polish-style');
+    if (!style) {
+      style = document.createElement('style');
+      style.id = 'aside-mel-metrics-polish-style';
+      document.head.appendChild(style);
+    }
+    style.textContent = `
+      /* Dropdowns — Radius Select default */
+      main button[aria-haspopup="menu"] {
+        height: 32px !important;
+        min-height: 32px !important;
+        max-height: 32px !important;
+        padding: 0 12px !important;
+        border-radius: 8px !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        gap: 8px !important;
+      }
+      main button[aria-haspopup="menu"] svg {
+        width: 16px !important;
+        height: 16px !important;
+      }
+
+      /* Scope tabs — Radius UI 3.0 Tabs default */
+      [data-r-tabs="default"] {
+        display: inline-flex !important;
+        align-items: center !important;
+        height: 32px !important;
+        padding: 3px !important;
+        border-radius: 10px !important;
+        background: ${T.mutedBg} !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        gap: 0 !important;
+        width: fit-content !important;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+      }
+      [data-r-tabs="default"] > button[data-r-tab="trigger"] {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 26px !important;
+        padding: 2px 10px !important;
+        border-radius: 8px !important;
+        border: 0 !important;
+        background: transparent !important;
+        color: ${T.muted} !important;
+        box-shadow: none !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        line-height: 20px !important;
+        cursor: pointer !important;
+        outline: none !important;
+        white-space: nowrap !important;
+      }
+      [data-r-tabs="default"] > button[data-r-tab="trigger"][data-state="active"] {
+        background: #FFFFFF !important;
+        color: ${T.primary} !important;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05) !important;
+      }
+
+      /* Section headers: title left, caption right, single line */
+      main .aside-section-head,
+      main .aside-section-head[data-aside-full="1"] {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        gap: 12px !important;
+        margin: 0 0 10px 0 !important;
+        padding: 0 !important;
+        min-height: 20px !important;
+        box-sizing: border-box !important;
+      }
+      main .aside-section-head > h3 { margin: 0 !important; line-height: 16px !important; }
+      main .aside-section-head > .aside-filter-caption {
+        margin-left: auto !important;
+        font-size: 11px !important;
+        font-weight: 500 !important;
+        color: #A3A3A3 !important;
+        white-space: nowrap !important;
+        text-align: right !important;
+        line-height: 16px !important;
+      }
+      /* hide leftover product header chip rows */
+      main [data-magicpath-id="247"],
+      main [data-magicpath-id="266"] {
+        display: none !important;
+      }
+
+      /* Filter cards */
+      [data-aside-filter-card] {
+        cursor: pointer !important;
+        transition: border-color .15s ease, box-shadow .15s ease !important;
+      }
+      [data-aside-filter-card][data-aside-selected="true"] {
+        border-color: ${T.primary} !important;
+        box-shadow: 0 0 0 2px rgba(90,95,242,.18) !important;
+      }
+      [data-aside-filter-card][data-aside-selected="true"]::after {
+        content: none !important;
+        display: none !important;
+      }
+
+      /* Reporting expand as left icon */
+      #radius-reporting-inpage .rr-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+      }
+      #radius-reporting-inpage .rr-header-left {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+      }
+      #radius-reporting-inpage .rr-sidebar-toggle.rr-leading-toggle {
+        position: static !important;
+        width: 28px !important;
+        height: 28px !important;
+        padding: 4px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border: none !important;
+        border-radius: 8px !important;
+        background: transparent !important;
+        color: #0A0A0A !important;
+        cursor: pointer !important;
+      }
+      #radius-reporting-inpage .rr-sidebar-toggle.rr-leading-toggle:hover {
+        background: #F5F5F5 !important;
+      }
+      #radius-reporting-inpage .rr-sidebar-toggle.rr-leading-toggle svg {
+        width: 18px !important;
+        height: 18px !important;
+      }
+      #radius-reporting-inpage .rr-header > .rr-sidebar-toggle:not(.rr-leading-toggle) {
+        display: none !important;
+      }
+      /* hide decorative doc icon when toggle is leading */
+      #radius-reporting-inpage .rr-doc-icon { display: none !important; }
+    `;
+  }
+
+  function hideTitleBlock() {
+    const h1 = document.querySelector('main h1');
+    if (!h1) return;
+    const titleBlock = h1.parentElement;
+    if (!titleBlock) return;
+    titleBlock.style.setProperty('display', 'none', 'important');
+    titleBlock.setAttribute('aria-hidden', 'true');
+  }
+
+  function styleTab(btn, active) {
+    btn.setAttribute('data-r-tab', 'trigger');
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('data-state', active ? 'active' : 'inactive');
+    btn.className = '';
+    btn.style.cssText = active
+      ? `display:inline-flex;align-items:center;justify-content:center;height:26px;padding:2px 10px;border-radius:8px;border:0;background:#fff;color:${T.primary};box-shadow:0 1px 2px rgba(0,0,0,.05);font-size:14px;font-weight:500;line-height:20px;cursor:pointer;outline:none;white-space:nowrap;`
+      : `display:inline-flex;align-items:center;justify-content:center;height:26px;padding:2px 10px;border-radius:8px;border:0;background:transparent;color:${T.muted};box-shadow:none;font-size:14px;font-weight:500;line-height:20px;cursor:pointer;outline:none;white-space:nowrap;`;
+  }
+
+  function setupToolbar() {
+    const h1 = document.querySelector('main h1');
+    const titleBlock = h1?.parentElement;
+    const headerRow = titleBlock?.parentElement;
+    if (!headerRow) return;
+
+    headerRow.style.cssText = 'display:flex!important;justify-content:space-between!important;align-items:center!important;width:100%!important;gap:12px!important;';
+
+    const myBtn = Array.from(document.querySelectorAll('button')).find(b => (b.textContent || '').trim() === 'My Clients');
+    const teamBtn = Array.from(document.querySelectorAll('button')).find(b => (b.textContent || '').trim() === 'Team Members');
+    const dateBtn = Array.from(document.querySelectorAll('button[aria-haspopup="menu"]')).find(b =>
+      /This Month|Last 7|Last 30|Today/i.test(b.textContent || '')
+    );
+    if (!myBtn || !teamBtn || !dateBtn) return;
+
+    // find controls container (sibling of title block or shared parent child)
+    let controls = headerRow.querySelector('[data-magicpath-id="72"]');
+    if (!controls) {
+      controls = Array.from(headerRow.children).find(c => c !== titleBlock && c.querySelector?.('button'));
+    }
+    if (!controls) return;
+
+    if (controls.getAttribute('data-aside-toolbar-ready') === '1') {
+      // still ensure structure
+      return;
+    }
+
+    const left = document.createElement('div');
+    left.setAttribute('data-aside-toolbar-left', '1');
+    left.style.cssText = 'display:flex;align-items:center;';
+
+    const right = document.createElement('div');
+    right.setAttribute('data-aside-toolbar-right', '1');
+    right.style.cssText = 'display:flex;align-items:center;';
+
+    const track = document.createElement('div');
+    track.setAttribute('data-r-tabs', 'default');
+    track.setAttribute('role', 'tablist');
+    track.id = 'radius-scope-tabs';
+
+    styleTab(myBtn, true);
+    styleTab(teamBtn, false);
+    track.appendChild(myBtn);
+    track.appendChild(teamBtn);
+
+    if (!track.__wired) {
+      track.__wired = true;
+      track.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-r-tab="trigger"]');
+        if (!btn || !track.contains(btn)) return;
+        track.querySelectorAll('[data-r-tab="trigger"]').forEach(b => styleTab(b, b === btn));
+      });
+    }
+
+    left.appendChild(track);
+
+    dateBtn.style.setProperty('height', '32px', 'important');
+    dateBtn.style.setProperty('border-radius', '8px', 'important');
+    dateBtn.style.setProperty('padding', '0 12px', 'important');
+    dateBtn.style.setProperty('font-size', '14px', 'important');
+    dateBtn.style.setProperty('font-weight', '500', 'important');
+    right.appendChild(dateBtn);
+
+    controls.innerHTML = '';
+    controls.setAttribute('data-aside-toolbar-ready', '1');
+    controls.style.cssText = 'display:flex!important;justify-content:space-between!important;align-items:center!important;width:100%!important;flex:1!important;';
+    controls.appendChild(left);
+    controls.appendChild(right);
+  }
+
+  function setupReportingToggle() {
+    const root = document.getElementById('radius-reporting-inpage');
+    if (!root) return;
+    const left = root.querySelector('.rr-header-left');
+    const docIcon = root.querySelector('.rr-doc-icon');
+    const toggle = root.querySelector('.rr-sidebar-toggle');
+    if (!left || !toggle) return;
+    if (!toggle.classList.contains('rr-leading-toggle')) {
+      toggle.classList.add('rr-leading-toggle');
+      left.insertBefore(toggle, left.firstChild);
+    }
+    if (docIcon) docIcon.style.setProperty('display', 'none', 'important');
+  }
+
+  function placeCaption(heading, text) {
+    if (!heading) return;
+    const section = heading.closest('section') || heading.closest('[class*="space-y"]') || heading.parentElement?.parentElement;
+    if (!section) return;
+
+    // remove duplicate heads
+    const existing = Array.from(section.querySelectorAll('.aside-section-head'));
+    let bar = existing[0];
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.className = 'aside-section-head';
+      bar.setAttribute('data-aside-full', '1');
+      section.insertBefore(bar, section.firstElementChild);
+    }
+    existing.slice(1).forEach(b => b.remove());
+
+    bar.innerHTML = '';
+    bar.appendChild(heading);
+    heading.querySelectorAll('.aside-filter-caption').forEach(c => c.remove());
+
+    const cap = document.createElement('span');
+    cap.className = 'aside-filter-caption';
+    cap.textContent = text;
+    bar.appendChild(cap);
+
+    bar.style.setProperty('display', 'flex', 'important');
+    bar.style.setProperty('align-items', 'center', 'important');
+    bar.style.setProperty('justify-content', 'space-between', 'important');
+    bar.style.setProperty('width', '100%', 'important');
+  }
+
+  function setupSectionCaptions() {
+    const dealH = document.getElementById('deal-progression-heading') ||
+      Array.from(document.querySelectorAll('h3')).find(h => /Deal Progression/i.test(h.textContent || ''));
+    const trigH = document.getElementById('activity-triggers-heading') ||
+      Array.from(document.querySelectorAll('h3')).find(h => /Client Activity Triggers/i.test(h.textContent || ''));
+    placeCaption(dealH, 'Filter activity by stage');
+    placeCaption(trigH, 'Filter activity by clients');
+
+    // hide milestone chevron
+    const mileLabel = Array.from(document.querySelectorAll('main p, main span')).find(el => (el.textContent || '').trim() === 'Milestones');
+    const mileCell = mileLabel?.closest('.flex-1');
+    if (mileCell) {
+      mileCell.querySelectorAll('.lucide-chevron-down').forEach(s => s.style.setProperty('display', 'none', 'important'));
+    }
+  }
+
+  // ── Filter model ──
+  if (!window.__asideFilterState) {
+    window.__asideFilterState = { stage: null, signal: null };
+  }
+  const state = window.__asideFilterState;
+
+  function labelOf(el) {
+    const h = el.querySelector('h3, h2');
+    if (h && (h.textContent || '').trim().length < 40) return (h.textContent || '').trim();
+    return (el.textContent || '').trim().split('\n')[0].slice(0, 24);
+  }
+
+  function tagCards() {
+    const dealH = document.getElementById('deal-progression-heading');
+    const trigH = document.getElementById('activity-triggers-heading');
+    const dealSection = dealH?.closest('section') || dealH?.parentElement?.parentElement;
+    const triggerSection = trigH?.closest('section') || trigH?.parentElement?.parentElement;
+    (dealSection ? Array.from(dealSection.querySelectorAll('[role="button"]')) : []).forEach(el => {
+      if (/Clear/i.test(el.getAttribute('aria-label') || '')) return;
+      el.setAttribute('data-aside-filter-card', 'stage');
+      el.setAttribute('data-aside-filter-label', labelOf(el));
+    });
+    (triggerSection ? Array.from(triggerSection.querySelectorAll('[role="button"]')) : []).forEach(el => {
+      if (/Clear/i.test(el.getAttribute('aria-label') || '')) return;
+      el.setAttribute('data-aside-filter-card', 'signal');
+      el.setAttribute('data-aside-filter-label', labelOf(el));
+    });
+  }
+
+  function hideHeaderChips() {
+    ['deal-progression-heading', 'activity-triggers-heading'].forEach(id => {
+      const h = document.getElementById(id);
+      const row = h?.closest('.flex') || h?.parentElement;
+      row?.querySelectorAll('button, span').forEach(el => {
+        if (el.classList?.contains('aside-filter-caption')) return;
+        const aria = el.getAttribute?.('aria-label') || '';
+        const text = (el.textContent || '').trim();
+        if (/Clear .*filter/i.test(aria) || (text === 'Property Showing' && /rounded-full|primary/i.test(el.className?.toString?.() || ''))) {
+          el.style.setProperty('display', 'none', 'important');
+        }
+      });
+    });
+    // metrics title native pill
+    const h2 = Array.from(document.querySelectorAll('h2')).find(h => /Metrics Activity/i.test(h.textContent || ''));
+    h2?.parentElement?.querySelectorAll('span').forEach(sp => {
+      if ((sp.textContent || '').trim() === 'Property Showing') {
+        sp.style.setProperty('display', 'none', 'important');
+      }
+    });
+  }
+
+  function setupMetricsTitle() {
+    const h2 = Array.from(document.querySelectorAll('h2')).find(h => /Metrics Activity/i.test(h.textContent || ''));
+    const titleRow = h2?.parentElement;
+    if (!h2 || !titleRow) return;
+
+    titleRow.style.setProperty('display', 'flex', 'important');
+    titleRow.style.setProperty('align-items', 'center', 'important');
+    titleRow.style.setProperty('gap', '0', 'important');
+
+    let cluster = document.getElementById('aside-metrics-title-cluster');
+    if (!cluster) {
+      cluster = document.createElement('div');
+      cluster.id = 'aside-metrics-title-cluster';
+      titleRow.insertBefore(cluster, titleRow.firstChild);
+    }
+    cluster.style.cssText = 'display:inline-flex;align-items:center;gap:8px;height:24px;';
+    const icon = titleRow.querySelector('svg');
+    if (icon && icon.parentElement !== cluster) cluster.appendChild(icon);
+    if (h2.parentElement !== cluster) cluster.appendChild(h2);
+    if (icon) {
+      icon.style.setProperty('width', '16px', 'important');
+      icon.style.setProperty('height', '16px', 'important');
+      icon.style.setProperty('display', 'block', 'important');
+    }
+    h2.style.setProperty('margin', '0', 'important');
+    h2.style.setProperty('line-height', '16px', 'important');
+    h2.style.setProperty('display', 'inline-flex', 'important');
+    h2.style.setProperty('align-items', 'center', 'important');
+
+    let meta = document.getElementById('aside-metrics-title-meta');
+    if (!meta) {
+      meta = document.createElement('div');
+      meta.id = 'aside-metrics-title-meta';
+      cluster.insertAdjacentElement('afterend', meta);
+    }
+    meta.style.cssText = 'display:inline-flex;align-items:center;flex-wrap:wrap;min-height:24px;';
+  }
+
+  function mkSep() {
+    const sep = document.createElement('span');
+    sep.setAttribute('aria-hidden', 'true');
+    sep.style.cssText = `display:inline-block;width:1px;height:12px;background:${T.border};margin:0 8px;flex-shrink:0;align-self:center;`;
+    return sep;
+  }
+
+  function renderFilters() {
+    hideHeaderChips();
+    document.querySelectorAll('[data-aside-filter-card]').forEach(el => {
+      const dim = el.getAttribute('data-aside-filter-card');
+      const label = el.getAttribute('data-aside-filter-label');
+      const selected = (dim === 'stage' && state.stage === label) || (dim === 'signal' && state.signal === label);
+      el.setAttribute('data-aside-selected', selected ? 'true' : 'false');
+    });
+
+    const meta = document.getElementById('aside-metrics-title-meta');
+    if (meta) {
+      meta.innerHTML = '';
+      const parts = [];
+      if (state.stage) parts.push(`Showing Stage · <strong style="color:${T.fg};font-weight:600">${state.stage}</strong>`);
+      if (state.signal) parts.push(`Client · <strong style="color:${T.fg};font-weight:600">${state.signal}</strong>`);
+      if (!parts.length) parts.push(`Showing <strong style="color:${T.fg};font-weight:600">all activity</strong>`);
+      parts.forEach(html => {
+        meta.appendChild(mkSep());
+        const seg = document.createElement('span');
+        seg.style.cssText = `display:inline-flex;align-items:center;height:24px;font-size:12px;font-weight:500;color:${T.muted};line-height:16px;white-space:nowrap;`;
+        seg.innerHTML = html;
+        meta.appendChild(seg);
+      });
+    }
+
+    const allActivity = Array.from(document.querySelectorAll('button')).find(
+      b => /All Activity/i.test((b.textContent || '').trim()) && b.getAttribute('aria-haspopup') === 'menu'
+    );
+    const toolbar = allActivity?.parentElement;
+    if (!toolbar) return;
+
+    let group = document.getElementById('aside-activity-filter-group');
+    if (!group) {
+      group = document.createElement('div');
+      group.id = 'aside-activity-filter-group';
+      toolbar.appendChild(group);
+    }
+    group.style.cssText = 'display:inline-flex;align-items:center;gap:0;margin-left:auto;height:28px;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;';
+
+    let countText = null;
+    toolbar.querySelectorAll('span, div, p').forEach(el => {
+      if (group.contains(el)) return;
+      const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
+      if (/^\d+\s*events?$/i.test(t) && el.childElementCount === 0) {
+        if (!countText) countText = t;
+        el.style.setProperty('display', 'none', 'important');
+        el.setAttribute('data-aside-real-events', t);
+      }
+    });
+    // collapse leftover visible event labels
+    toolbar.querySelectorAll('*').forEach(el => {
+      if (group.contains(el) || el === group) return;
+      const r = el.getBoundingClientRect();
+      if (r.width > 0 && r.width < 100 && r.height > 0 && el.childElementCount === 0) {
+        const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
+        if (/^\d+\s*events?$/i.test(t)) {
+          if (!countText) countText = t;
+          el.style.setProperty('display', 'none', 'important');
+        }
+      }
+    });
+    if (!countText) {
+      countText = document.querySelector('[data-aside-real-events]')?.getAttribute('data-aside-real-events') || '10 events';
+    }
+
+    group.innerHTML = '';
+    const events = document.createElement('span');
+    events.style.cssText = `font-size:12px;font-weight:500;color:${T.muted};white-space:nowrap;`;
+    events.textContent = countText;
+    group.appendChild(events);
+
+    const mkChip = (dim, prefix, label) => {
+      const chip = document.createElement('span');
+      chip.style.cssText = `display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 6px 0 8px;border-radius:6px;background:${T.primarySoft};border:1px solid ${T.primaryBorder};font-size:12px;font-weight:500;color:${T.primary};white-space:nowrap;`;
+      const t = document.createElement('span');
+      t.textContent = `${prefix} · ${label}`;
+      const x = document.createElement('button');
+      x.type = 'button';
+      x.textContent = '×';
+      x.style.cssText = `border:0;background:transparent;color:${T.muted};cursor:pointer;font-size:12px;width:14px;height:14px;padding:0;`;
+      x.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (dim === 'stage') state.stage = null;
+        else state.signal = null;
+        renderFilters();
+      });
+      chip.appendChild(t);
+      chip.appendChild(x);
+      return chip;
+    };
+
+    if (state.stage || state.signal) {
+      group.appendChild(mkSep());
+      if (state.stage) group.appendChild(mkChip('stage', 'Stage', state.stage));
+      if (state.stage && state.signal) group.appendChild(mkSep());
+      if (state.signal) group.appendChild(mkChip('signal', 'Client', state.signal));
+      group.appendChild(mkSep());
+      const clearBtn = document.createElement('button');
+      clearBtn.type = 'button';
+      clearBtn.textContent = 'Clear';
+      clearBtn.style.cssText = `height:24px;padding:0 6px;border:0;background:transparent;font-size:12px;font-weight:600;color:${T.destructive};cursor:pointer;`;
+      clearBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        state.stage = null;
+        state.signal = null;
+        renderFilters();
+      });
+      group.appendChild(clearBtn);
+    }
+  }
+
+  function wireClicks() {
+    if (window.__asideMelFilterClickWired) return;
+    window.__asideMelFilterClickWired = true;
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('#aside-activity-filter-group')) return;
+      const card = e.target.closest?.('[data-aside-filter-card]');
+      if (!card) return;
+      const dim = card.getAttribute('data-aside-filter-card');
+      const label = card.getAttribute('data-aside-filter-label');
+      // single-select within dimension; multi across
+      if (dim === 'stage') state.stage = state.stage === label ? null : label;
+      else state.signal = state.signal === label ? null : label;
+      renderFilters();
+    }, true);
+  }
+
+  function boot() {
+    ensureStyle();
+    hideTitleBlock();
+    setupToolbar();
+    setupReportingToggle();
+    setupSectionCaptions();
+    tagCards();
+    setupMetricsTitle();
+    wireClicks();
+    renderFilters();
+  }
+
+  function schedule() {
+    boot();
+    // React/MagicPath late hydration
+    setTimeout(boot, 300);
+    setTimeout(boot, 1000);
+    setTimeout(boot, 2000);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', schedule);
+  else schedule();
+})();
+</script>
+
 </body>
 </html>

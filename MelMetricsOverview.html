@@ -647,7 +647,7 @@ Error generating stack: `+a.message+`
   if (window.__radiusContentPolishV1) return;
   window.__radiusContentPolishV1 = true;
 
-  const CSS = "\n/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n   Radius UI 3.0 visual polish \u2014 Mel Metrics content\n   Keeps existing card tint fills + icons; unifies structure\n   \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */\nmain[data-magicpath-id=\"66\"],\nmain.flex-1 {\n  --r-fg: #0A0A0A;\n  --r-muted: #737373;\n  --r-border: #E5E5E5;\n  --r-card: #FFFFFF;\n  --r-primary: #5A5FF2;\n  --r-shadow-sm: 0 1px 2px -1px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.1);\n  --r-radius-card: 14px;\n  --r-radius-control: 10px;\n  --r-font: Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;\n\n  font-family: var(--r-font) !important;\n  background: #FAFAFA !important; /* soft page surface like DS app shells */\n  color: var(--r-fg);\n  padding: 20px 24px 32px !important;\n  gap: 0 !important;\n}\n\n/* Vertical section rhythm */\nmain[data-magicpath-id=\"66\"] > *,\nmain.flex-1 > * {\n  margin-bottom: 20px;\n}\nmain[data-magicpath-id=\"66\"] > *:last-child,\nmain.flex-1 > *:last-child {\n  margin-bottom: 0;\n}\n\n/* Page title */\nmain h1 {\n  font-family: var(--r-font) !important;\n  font-size: 20px !important;\n  font-weight: 600 !important;\n  letter-spacing: -0.01em !important;\n  color: var(--r-fg) !important;\n  line-height: 28px !important;\n}\nmain h1 + p,\nmain [data-magicpath-id=\"67\"] p {\n  font-size: 13px !important;\n  line-height: 18px !important;\n  color: var(--r-muted) !important;\n  margin-top: 4px !important;\n}\n\n/* Section headers \u2014 DS: no ALL CAPS UI labels */\nmain h2,\nmain h3,\nmain .text-xs.font-bold.uppercase,\nmain [class*=\"tracking-widest\"] {\n  font-family: var(--r-font) !important;\n  font-size: 13px !important;\n  font-weight: 600 !important;\n  letter-spacing: 0 !important;\n  text-transform: none !important;\n  color: var(--r-fg) !important;\n  line-height: 20px !important;\n}\n\n/* Quiet sub-labels like Prospecting chip labels stay small but not shouty */\nmain .text-\\[10px\\].font-bold.uppercase,\nmain span.text-\\[10px\\].font-bold {\n  font-size: 12px !important;\n  font-weight: 500 !important;\n  letter-spacing: 0 !important;\n  text-transform: none !important;\n  color: var(--r-muted) !important;\n}\n\n/* \u2500\u2500 White surface cards (deal / triggers / tables / activity) \u2500\u2500\n   DO NOT override background-color on tinted metric cells */\nmain .bg-card,\nmain .bg-white,\nmain [class*=\"bg-card\"],\nmain .rounded-lg.border,\nmain .rounded-xl.border {\n  border-color: var(--r-border) !important;\n  border-radius: var(--r-radius-card) !important;\n  box-shadow: var(--r-shadow-sm) !important;\n}\n\n/* Deal progression + activity trigger cards */\nmain [class*=\"rounded-lg\"].border.bg-card,\nmain .group.relative.cursor-pointer.bg-card {\n  background: var(--r-card) !important;\n  border: 1px solid var(--r-border) !important;\n  border-radius: var(--r-radius-card) !important;\n  box-shadow: var(--r-shadow-sm) !important;\n  padding: 10px 12px !important;\n  min-height: 0 !important;\n  height: auto !important;\n  transition: border-color .12s ease, box-shadow .12s ease;\n}\n/* Compact inner stack for deal/trigger metric cards */\nmain .group.relative.cursor-pointer.bg-card .p-4,\nmain .group.relative.cursor-pointer.bg-card .p-5,\nmain .group.relative.cursor-pointer.bg-card .p-6,\nmain [class*=\"rounded-lg\"].border.bg-card .p-4,\nmain [class*=\"rounded-lg\"].border.bg-card .p-5,\nmain [class*=\"rounded-lg\"].border.bg-card .p-6 {\n  padding: 0 !important;\n}\nmain .group.relative.cursor-pointer.bg-card .pb-2,\nmain .group.relative.cursor-pointer.bg-card .pt-2,\nmain .group.relative.cursor-pointer.bg-card .space-y-1,\nmain .group.relative.cursor-pointer.bg-card .space-y-2,\nmain .group.relative.cursor-pointer.bg-card .space-y-3 {\n  margin: 0 !important;\n  padding-top: 0 !important;\n  padding-bottom: 0 !important;\n}\n/* Big numbers in these cards: tight leading */\nmain .group.relative.cursor-pointer.bg-card .text-2xl,\nmain .group.relative.cursor-pointer.bg-card .text-3xl,\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-2xl\"],\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-3xl\"] {\n  margin-top: 2px !important;\n  margin-bottom: 2px !important;\n  line-height: 1 !important;\n  font-size: 22px !important;\n}\nmain .grid {\n  gap: 10px !important;\n}\nmain [class*=\"rounded-lg\"].border.bg-card:hover,\nmain .group.relative.cursor-pointer.bg-card:hover {\n  border-color: #D4D4D4 !important;\n  box-shadow: 0 2px 4px -2px rgba(0,0,0,.1), 0 4px 6px -1px rgba(0,0,0,.08) !important;\n}\n\n/* Prospecting strip container \u2014 structure only; keep child tint colors */\nmain .border.border-slate-200.rounded-xl.overflow-hidden.bg-white,\nmain .border.rounded-xl.overflow-hidden.bg-white.flex {\n  border: 1px solid var(--r-border) !important;\n  border-radius: var(--r-radius-card) !important;\n  box-shadow: var(--r-shadow-sm) !important;\n  background: var(--r-card) !important;\n  overflow: hidden !important;\n}\n\n/* Prospecting cells: keep existing bg colors; normalize padding/type only */\nmain .border.rounded-xl.overflow-hidden.bg-white.flex > .flex-1,\nmain .border.border-slate-200.rounded-xl.overflow-hidden > .flex-1 {\n  padding: 10px 12px !important;\n  min-height: 0;\n  box-sizing: border-box;\n}\nmain .border.rounded-xl.overflow-hidden.bg-white.flex > .flex-1 {\n  border-color: rgba(229, 229, 229, 0.9) !important;\n}\n\n/* Metric numbers */\nmain .text-2xl.font-bold,\nmain p.text-2xl {\n  font-family: var(--r-font) !important;\n  font-size: 24px !important;\n  font-weight: 600 !important;\n  letter-spacing: -0.02em !important;\n  line-height: 1.1 !important;\n}\n\n/* Tiny uppercase meta inside cards \u2192 quieter DS meta */\nmain .text-\\[10px\\].font-semibold.uppercase,\nmain p.text-\\[10px\\] {\n  font-size: 11px !important;\n  font-weight: 500 !important;\n  letter-spacing: 0.02em !important;\n  text-transform: none !important;\n}\n\n/* Card titles inside deal/trigger cards */\nmain .group.relative.cursor-pointer h3,\nmain .group.relative.cursor-pointer .font-semibold {\n  font-size: 14px !important;\n  font-weight: 600 !important;\n  color: var(--r-fg) !important;\n  letter-spacing: 0 !important;\n  text-transform: none !important;\n}\n\n/* Filters / buttons in header row */\nmain button,\nmain [role=\"button\"] {\n  font-family: var(--r-font) !important;\n}\nmain .rounded-full,\nmain button.rounded-full {\n  border-radius: 9999px !important;\n}\n/* Primary pill already purple \u2014 keep; ensure radius-button feel on non-pills */\nmain button.bg-primary,\nmain button[class*=\"bg-primary\"] {\n  border-radius: 10px !important;\n}\n\n/* Segmented controls */\nmain .inline-flex.rounded-full,\nmain .inline-flex.items-center.rounded-full {\n  border: 1px solid var(--r-border) !important;\n  background: #fff !important;\n  box-shadow: none !important;\n}\n\n/* Dropdown-ish This Month */\nmain button.border,\nmain button[class*=\"border\"] {\n  border-color: var(--r-border) !important;\n}\n\n/* Tables */\nmain table,\nmain [role=\"table\"] {\n  font-family: var(--r-font) !important;\n}\nmain th {\n  font-size: 12px !important;\n  font-weight: 500 !important;\n  color: var(--r-muted) !important;\n  text-transform: none !important;\n  letter-spacing: 0 !important;\n}\nmain td {\n  font-size: 13px !important;\n  color: var(--r-fg) !important;\n}\n\n/* Activity list cards */\nmain .rounded-lg.border,\nmain .rounded-xl.border {\n  border-radius: var(--r-radius-card) !important;\n}\n\n/* Icon containers inside cards: do not recolor SVG strokes/fills */\nmain svg {\n  /* leave icon colors as authored */\n}\n\n/* Equalize deal/trigger grid gap */\nmain .grid {\n  gap: 12px !important;\n}\n\n/* Title block under reporting */\nmain > [data-magicpath-id=\"67\"] {\n  margin-bottom: 20px !important;\n  padding-bottom: 0 !important;\n  border-bottom: none !important;\n}\n\n/* Side rail active wash parity with primary */\n#radius-side-panel .rsp-item[aria-current=\"page\"],\n#radius-side-panel .rsp-item.is-active {\n  background: #EEF0FF !important;\n  color: #5A5FF2 !important;\n}\n\n/* Compact deal/trigger cards: kill double padding (outer + p-6 header) */\nmain .group.relative.cursor-pointer.bg-card,\nmain .rounded-lg.text-card-foreground.group.relative.cursor-pointer {\n  padding: 0 !important;\n  min-height: 0 !important;\n  height: auto !important;\n}\nmain .group.relative.cursor-pointer.bg-card > div,\nmain .rounded-lg.text-card-foreground.group.relative.cursor-pointer > div {\n  padding: 10px 12px !important;\n}\nmain .group.relative.cursor-pointer.bg-card > div.p-6,\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"p-6\"],\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"pt-4\"],\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"px-4\"],\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"pb-2\"] {\n  padding: 10px 12px 0 !important;\n}\nmain .group.relative.cursor-pointer.bg-card > div + div,\nmain .group.relative.cursor-pointer.bg-card .p-6 + div,\nmain .group.relative.cursor-pointer.bg-card [class*=\"p-6\"] + * {\n  padding: 8px 12px 12px !important;\n  margin-top: 0 !important;\n}\n/* Icon-label gap match prospecting (8px) on deal + activity cards */\nmain .group.relative.cursor-pointer.bg-card .flex.items-center.gap-2,\nmain .group.relative.cursor-pointer.bg-card .flex.items-center.gap-2.min-w-0,\nmain .rounded-lg.text-card-foreground.group.relative.cursor-pointer .flex.items-center {\n  gap: 8px !important;\n}\n/* Breathing room between title row (Outreach) and big number */\nmain .group.relative.cursor-pointer.bg-card > div:first-child {\n  padding-bottom: 2px !important;\n}\nmain .group.relative.cursor-pointer.bg-card .text-2xl,\nmain .group.relative.cursor-pointer.bg-card .text-3xl,\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-2xl\"],\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-3xl\"] {\n  margin-top: 6px !important;\n  margin-bottom: 4px !important;\n  line-height: 1.05 !important;\n  font-size: 24px !important;\n}\n\nmain .group.relative.cursor-pointer.bg-card h3 {\n  font-size: 13px !important;\n  line-height: 1.2 !important;\n}\n";
+  const CSS = "\n/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n   Radius UI 3.0 visual polish \u2014 Mel Metrics content\n   Keeps existing card tint fills + icons; unifies structure\n   \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */\nmain[data-magicpath-id=\"66\"],\nmain.flex-1 {\n  --r-fg: #0A0A0A;\n  --r-muted: #737373;\n  --r-border: #E5E5E5;\n  --r-card: #FFFFFF;\n  --r-primary: #5A5FF2;\n  --r-shadow-sm: 0 1px 2px -1px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.1);\n  --r-radius-card: 14px;\n  --r-radius-control: 10px;\n  --r-font: Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;\n\n  font-family: var(--r-font) !important;\n  background: #FAFAFA !important; /* soft page surface like DS app shells */\n  color: var(--r-fg);\n  padding: 20px 24px 32px !important;\n  gap: 0 !important;\n}\n\n/* Vertical section rhythm */\nmain[data-magicpath-id=\"66\"] > *,\nmain.flex-1 > * {\n  margin-bottom: 20px;\n}\nmain[data-magicpath-id=\"66\"] > *:last-child,\nmain.flex-1 > *:last-child {\n  margin-bottom: 0;\n}\n\n/* Page title */\nmain h1 {\n  font-family: var(--r-font) !important;\n  font-size: 20px !important;\n  font-weight: 600 !important;\n  letter-spacing: -0.01em !important;\n  color: var(--r-fg) !important;\n  line-height: 28px !important;\n}\nmain h1 + p,\nmain [data-magicpath-id=\"67\"] p {\n  font-size: 13px !important;\n  line-height: 18px !important;\n  color: var(--r-muted) !important;\n  margin-top: 4px !important;\n}\n\n/* Section headers \u2014 DS: no ALL CAPS UI labels */\nmain h2,\nmain h3,\nmain .text-xs.font-bold.uppercase,\nmain [class*=\"tracking-widest\"] {\n  font-family: var(--r-font) !important;\n  font-size: 13px !important;\n  font-weight: 600 !important;\n  letter-spacing: 0 !important;\n  text-transform: none !important;\n  color: var(--r-fg) !important;\n  line-height: 20px !important;\n}\n\n/* Quiet sub-labels like Prospecting chip labels stay small but not shouty */\nmain .text-\\[10px\\].font-bold.uppercase,\nmain span.text-\\[10px\\].font-bold {\n  font-size: 12px !important;\n  font-weight: 500 !important;\n  letter-spacing: 0 !important;\n  text-transform: none !important;\n  color: var(--r-muted) !important;\n}\n\n/* \u2500\u2500 White surface cards (deal / triggers / tables / activity) \u2500\u2500\n   DO NOT override background-color on tinted metric cells */\nmain .bg-card,\nmain .bg-white,\nmain [class*=\"bg-card\"],\nmain .rounded-lg.border,\nmain .rounded-xl.border {\n  border-color: var(--r-border) !important;\n  border-radius: var(--r-radius-card) !important;\n  box-shadow: var(--r-shadow-sm) !important;\n}\n\n/* Deal progression + activity trigger cards */\nmain [class*=\"rounded-lg\"].border.bg-card,\nmain .group.relative.cursor-pointer.bg-card {\n  background: var(--r-card) !important;\n  border: 1px solid var(--r-border) !important;\n  border-radius: var(--r-radius-card) !important;\n  box-shadow: var(--r-shadow-sm) !important;\n  padding: 10px 12px !important;\n  min-height: 0 !important;\n  height: auto !important;\n  transition: border-color .12s ease, box-shadow .12s ease;\n}\n/* Compact inner stack for deal/trigger metric cards */\nmain .group.relative.cursor-pointer.bg-card .p-4,\nmain .group.relative.cursor-pointer.bg-card .p-5,\nmain .group.relative.cursor-pointer.bg-card .p-6,\nmain [class*=\"rounded-lg\"].border.bg-card .p-4,\nmain [class*=\"rounded-lg\"].border.bg-card .p-5,\nmain [class*=\"rounded-lg\"].border.bg-card .p-6 {\n  padding: 0 !important;\n}\nmain .group.relative.cursor-pointer.bg-card .pb-2,\nmain .group.relative.cursor-pointer.bg-card .pt-2,\nmain .group.relative.cursor-pointer.bg-card .space-y-1,\nmain .group.relative.cursor-pointer.bg-card .space-y-2,\nmain .group.relative.cursor-pointer.bg-card .space-y-3 {\n  margin: 0 !important;\n  padding-top: 0 !important;\n  padding-bottom: 0 !important;\n}\n/* Big numbers in these cards: tight leading */\nmain .group.relative.cursor-pointer.bg-card .text-2xl,\nmain .group.relative.cursor-pointer.bg-card .text-3xl,\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-2xl\"],\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-3xl\"] {\n  margin-top: 2px !important;\n  margin-bottom: 2px !important;\n  line-height: 1 !important;\n  font-size: 22px !important;\n}\nmain .grid {\n  gap: 10px !important;\n}\nmain [class*=\"rounded-lg\"].border.bg-card:hover,\nmain .group.relative.cursor-pointer.bg-card:hover {\n  border-color: #D4D4D4 !important;\n  box-shadow: 0 2px 4px -2px rgba(0,0,0,.1), 0 4px 6px -1px rgba(0,0,0,.08) !important;\n}\n\n/* Prospecting strip container \u2014 structure only; keep child tint colors */\nmain .border.border-slate-200.rounded-xl.overflow-hidden.bg-white,\nmain .border.rounded-xl.overflow-hidden.bg-white.flex {\n  border: 1px solid var(--r-border) !important;\n  border-radius: var(--r-radius-card) !important;\n  box-shadow: var(--r-shadow-sm) !important;\n  background: var(--r-card) !important;\n  overflow: hidden !important;\n}\n\n/* Prospecting cells: keep existing bg colors; normalize padding/type only */\nmain .border.rounded-xl.overflow-hidden.bg-white.flex > .flex-1,\nmain .border.border-slate-200.rounded-xl.overflow-hidden > .flex-1 {\n  padding: 10px 12px !important;\n  min-height: 0;\n  box-sizing: border-box;\n}\nmain .border.rounded-xl.overflow-hidden.bg-white.flex > .flex-1 {\n  border-color: rgba(229, 229, 229, 0.9) !important;\n}\n\n/* Metric numbers */\nmain .text-2xl.font-bold,\nmain p.text-2xl {\n  font-family: var(--r-font) !important;\n  font-size: 24px !important;\n  font-weight: 600 !important;\n  letter-spacing: -0.02em !important;\n  line-height: 1.1 !important;\n}\n\n/* Tiny uppercase meta inside cards \u2192 quieter DS meta */\nmain .text-\\[10px\\].font-semibold.uppercase,\nmain p.text-\\[10px\\] {\n  font-size: 11px !important;\n  font-weight: 500 !important;\n  letter-spacing: 0.02em !important;\n  text-transform: none !important;\n}\n\n/* Card titles inside deal/trigger cards */\nmain .group.relative.cursor-pointer h3,\nmain .group.relative.cursor-pointer .font-semibold {\n  font-size: 14px !important;\n  font-weight: 600 !important;\n  color: var(--r-fg) !important;\n  letter-spacing: 0 !important;\n  text-transform: none !important;\n}\n\n/* Filters / buttons in header row */\nmain button,\nmain [role=\"button\"] {\n  font-family: var(--r-font) !important;\n}\nmain .rounded-full,\nmain button.rounded-full {\n  border-radius: 9999px !important;\n}\n/* Primary pill already purple \u2014 keep; ensure radius-button feel on non-pills */\nmain button.bg-primary,\nmain button[class*=\"bg-primary\"] {\n  border-radius: 10px !important;\n}\n\n/* Segmented controls — exclude count badges (bg-secondary / *active text) */\nmain .inline-flex.rounded-full:not(.bg-secondary):not([data-aside-priority-badge]),\nmain .inline-flex.items-center.rounded-full:not(.bg-secondary):not([data-aside-priority-badge]) {\n  border: 1px solid var(--r-border) !important;\n  background: #fff !important;\n  box-shadow: none !important;\n}\n/* Top Priority count badge readable muted pill */\nmain [data-aside-priority-badge=\"1\"],\nmain .flex.items-center.gap-2 > .inline-flex.items-center.rounded-full.bg-secondary {\n  background: #F5F5F5 !important;\n  background-color: #F5F5F5 !important;\n  color: #525252 !important;\n  border: 1px solid #E5E5E5 !important;\n  box-shadow: none !important;\n  font-size: 11px !important;\n  font-weight: 600 !important;\n  letter-spacing: 0.01em !important;\n  text-transform: none !important;\n}\n\n/* Dropdown-ish This Month */\nmain button.border,\nmain button[class*=\"border\"] {\n  border-color: var(--r-border) !important;\n}\n\n/* Tables */\nmain table,\nmain [role=\"table\"] {\n  font-family: var(--r-font) !important;\n}\nmain th {\n  font-size: 12px !important;\n  font-weight: 500 !important;\n  color: var(--r-muted) !important;\n  text-transform: none !important;\n  letter-spacing: 0 !important;\n}\nmain td {\n  font-size: 13px !important;\n  color: var(--r-fg) !important;\n}\n\n/* Activity list cards */\nmain .rounded-lg.border,\nmain .rounded-xl.border {\n  border-radius: var(--r-radius-card) !important;\n}\n\n/* Icon containers inside cards: do not recolor SVG strokes/fills */\nmain svg {\n  /* leave icon colors as authored */\n}\n\n/* Equalize deal/trigger grid gap */\nmain .grid {\n  gap: 12px !important;\n}\n\n/* Title block under reporting */\nmain > [data-magicpath-id=\"67\"] {\n  margin-bottom: 20px !important;\n  padding-bottom: 0 !important;\n  border-bottom: none !important;\n}\n\n/* Side rail active wash parity with primary */\n#radius-side-panel .rsp-item[aria-current=\"page\"],\n#radius-side-panel .rsp-item.is-active {\n  background: #EEF0FF !important;\n  color: #5A5FF2 !important;\n}\n\n/* Compact deal/trigger cards: kill double padding (outer + p-6 header) */\nmain .group.relative.cursor-pointer.bg-card,\nmain .rounded-lg.text-card-foreground.group.relative.cursor-pointer {\n  padding: 0 !important;\n  min-height: 0 !important;\n  height: auto !important;\n}\nmain .group.relative.cursor-pointer.bg-card > div,\nmain .rounded-lg.text-card-foreground.group.relative.cursor-pointer > div {\n  padding: 10px 12px !important;\n}\nmain .group.relative.cursor-pointer.bg-card > div.p-6,\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"p-6\"],\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"pt-4\"],\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"px-4\"],\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"pb-2\"] {\n  padding: 10px 12px 0 !important;\n}\nmain .group.relative.cursor-pointer.bg-card > div + div,\nmain .group.relative.cursor-pointer.bg-card .p-6 + div,\nmain .group.relative.cursor-pointer.bg-card [class*=\"p-6\"] + * {\n  padding: 8px 12px 12px !important;\n  margin-top: 0 !important;\n}\n/* Icon-label gap match prospecting (8px) on deal + activity cards */\nmain .group.relative.cursor-pointer.bg-card .flex.items-center.gap-2,\nmain .group.relative.cursor-pointer.bg-card .flex.items-center.gap-2.min-w-0,\nmain .rounded-lg.text-card-foreground.group.relative.cursor-pointer .flex.items-center {\n  gap: 8px !important;\n}\n/* Breathing room between title row (Outreach) and big number */\nmain .group.relative.cursor-pointer.bg-card > div:first-child {\n  padding-bottom: 2px !important;\n}\nmain .group.relative.cursor-pointer.bg-card .text-2xl,\nmain .group.relative.cursor-pointer.bg-card .text-3xl,\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-2xl\"],\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-3xl\"] {\n  margin-top: 6px !important;\n  margin-bottom: 4px !important;\n  line-height: 1.05 !important;\n  font-size: 24px !important;\n}\n\nmain .group.relative.cursor-pointer.bg-card h3 {\n  font-size: 13px !important;\n  line-height: 1.2 !important;\n}\n";
 
   function ensureStyle() {
     let style = document.getElementById('radius-content-polish-style');
@@ -815,6 +815,51 @@ Error generating stack: `+a.message+`
         display: none !important;
       }
 
+      /* Toolbar: left tabs + trailing filters always right (no centering when 3+ kids) */
+      [data-aside-toolbar-ready="1"] {
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 8px !important;
+      }
+      [data-aside-toolbar-left="1"] {
+        display: flex !important;
+        align-items: center !important;
+        margin-right: auto !important;
+        flex-shrink: 0 !important;
+      }
+      [data-aside-toolbar-right="1"] {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        margin-left: 0 !important;
+        flex-shrink: 0 !important;
+      }
+      /* Trailing React-injected filter (All Team Members) sits with right cluster */
+      [data-aside-toolbar-ready="1"] > button[aria-haspopup="menu"] {
+        flex-shrink: 0 !important;
+      }
+
+      /* Priority badge */
+      main [data-aside-priority-badge="1"] {
+        background: #F5F5F5 !important;
+        background-color: #F5F5F5 !important;
+        color: #525252 !important;
+        border: 1px solid #E5E5E5 !important;
+        box-shadow: none !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        text-transform: none !important;
+      }
+
+      /* Metrics meta spacing */
+      #aside-metrics-title-meta > span:not([aria-hidden]) {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+      }
+
       /* Filter cards */
       [data-aside-filter-card] {
         cursor: pointer !important;
@@ -910,20 +955,21 @@ Error generating stack: `+a.message+`
     }
     if (!controls) return;
 
-    // If React remounted stock buttons outside our track, rebuild
+    // If structure exists, only re-cluster right dropdowns (This Month + All Team Members)
     const trackExisting = document.getElementById('radius-scope-tabs');
     if (controls.getAttribute('data-aside-toolbar-ready') === '1' && trackExisting && trackExisting.contains(myBtn) && trackExisting.contains(teamBtn)) {
+      maintainToolbarRight(controls);
       return;
     }
     controls.removeAttribute('data-aside-toolbar-ready');
 
     const left = document.createElement('div');
     left.setAttribute('data-aside-toolbar-left', '1');
-    left.style.cssText = 'display:flex;align-items:center;';
+    left.style.cssText = 'display:flex;align-items:center;margin-right:auto;flex-shrink:0;';
 
     const right = document.createElement('div');
     right.setAttribute('data-aside-toolbar-right', '1');
-    right.style.cssText = 'display:flex;align-items:center;';
+    right.style.cssText = 'display:flex!important;align-items:center!important;gap:8px!important;margin-left:0!important;flex-shrink:0!important;';
 
     const track = document.createElement('div');
     track.setAttribute('data-r-tabs', 'default');
@@ -941,6 +987,10 @@ Error generating stack: `+a.message+`
         const btn = e.target.closest('[data-r-tab="trigger"]');
         if (!btn || !track.contains(btn)) return;
         track.querySelectorAll('[data-r-tab="trigger"]').forEach(b => styleTab(b, b === btn));
+        // React injects "All Team Members" after Team Members — re-cluster right
+        setTimeout(() => maintainToolbarRight(controls), 50);
+        setTimeout(() => maintainToolbarRight(controls), 200);
+        setTimeout(() => maintainToolbarRight(controls), 500);
       });
     }
 
@@ -955,9 +1005,60 @@ Error generating stack: `+a.message+`
 
     controls.innerHTML = '';
     controls.setAttribute('data-aside-toolbar-ready', '1');
-    controls.style.cssText = 'display:flex!important;justify-content:space-between!important;align-items:center!important;width:100%!important;flex:1!important;';
+    controls.style.cssText = 'display:flex!important;justify-content:flex-start!important;align-items:center!important;width:100%!important;flex:1!important;gap:8px!important;';
     controls.appendChild(left);
     controls.appendChild(right);
+    maintainToolbarRight(controls);
+  }
+
+  /** Keep date + team filter dropdowns on the RIGHT without moving React nodes.
+   *  space-between with 3 children centers the middle control — use margin-right:auto on left instead.
+   */
+  function maintainToolbarRight(controls) {
+    controls = controls || document.querySelector('[data-aside-toolbar-ready="1"]');
+    if (!controls) return;
+    const left = controls.querySelector('[data-aside-toolbar-left="1"]');
+    const right = controls.querySelector('[data-aside-toolbar-right="1"]');
+    if (left) {
+      left.style.setProperty('display', 'flex', 'important');
+      left.style.setProperty('align-items', 'center', 'important');
+      left.style.setProperty('margin-right', 'auto', 'important');
+      left.style.setProperty('flex-shrink', '0', 'important');
+    }
+    if (right) {
+      right.style.setProperty('display', 'flex', 'important');
+      right.style.setProperty('align-items', 'center', 'important');
+      right.style.setProperty('gap', '8px', 'important');
+      right.style.setProperty('flex-shrink', '0', 'important');
+      // clear margin-left auto so third sibling (All Team Members) can sit beside it
+      right.style.setProperty('margin-left', '0', 'important');
+    }
+    // flex-start + left margin-right:auto keeps ALL trailing controls right-aligned
+    controls.style.setProperty('display', 'flex', 'important');
+    controls.style.setProperty('justify-content', 'flex-start', 'important');
+    controls.style.setProperty('align-items', 'center', 'important');
+    controls.style.setProperty('width', '100%', 'important');
+    controls.style.setProperty('flex', '1', 'important');
+    controls.style.setProperty('gap', '8px', 'important');
+
+    // Style any trailing header menu buttons (e.g. All Team Members) that React appends
+    // as siblings — do not reparent them (breaks React).
+    Array.from(controls.children).forEach((ch) => {
+      if (ch === left || ch === right) return;
+      const btn = ch.matches?.('button[aria-haspopup="menu"]') ? ch : ch.querySelector?.('button[aria-haspopup="menu"]');
+      if (!btn) return;
+      btn.style.setProperty('height', '32px', 'important');
+      btn.style.setProperty('border-radius', '8px', 'important');
+      btn.style.setProperty('padding', '0 12px', 'important');
+      btn.style.setProperty('font-size', '14px', 'important');
+      btn.style.setProperty('font-weight', '500', 'important');
+      btn.style.setProperty('flex-shrink', '0', 'important');
+      if (ch !== btn) {
+        ch.style.setProperty('display', 'flex', 'important');
+        ch.style.setProperty('align-items', 'center', 'important');
+        ch.style.setProperty('flex-shrink', '0', 'important');
+      }
+    });
   }
 
   function setupReportingToggle() {
@@ -1138,8 +1239,26 @@ Error generating stack: `+a.message+`
       parts.forEach(html => {
         meta.appendChild(mkSep());
         const seg = document.createElement('span');
-        seg.style.cssText = `display:inline-flex;align-items:center;height:24px;font-size:12px;font-weight:500;color:${T.muted};line-height:16px;white-space:nowrap;`;
-        seg.innerHTML = html;
+        seg.style.cssText = `display:inline-flex;align-items:center;gap:4px;height:24px;font-size:12px;font-weight:500;color:${T.muted};line-height:16px;white-space:nowrap;`;
+        // Parse "Label <strong>value</strong>" into separate flex children so spaces don't collapse
+        const tmp = document.createElement('div');
+        tmp.innerHTML = html;
+        const strong = tmp.querySelector('strong');
+        if (strong) {
+          const value = (strong.textContent || '').trim();
+          strong.remove();
+          let prefix = (tmp.textContent || '').replace(/\s+/g, ' ').trim();
+          if (!prefix) prefix = 'Showing';
+          const lab = document.createElement('span');
+          lab.textContent = prefix;
+          const s = document.createElement('strong');
+          s.textContent = value;
+          s.style.cssText = `color:${T.fg};font-weight:600`;
+          seg.appendChild(lab);
+          seg.appendChild(s);
+        } else {
+          seg.textContent = (tmp.textContent || '').trim();
+        }
         meta.appendChild(seg);
       });
     }
@@ -1246,16 +1365,46 @@ Error generating stack: `+a.message+`
     }, true);
   }
 
+  function fixPriorityBadge() {
+    const h2 = Array.from(document.querySelectorAll('h2')).find(h => /Top Priority Clients/i.test(h.textContent || ''));
+    if (!h2 || !h2.parentElement) return;
+    const badge = Array.from(h2.parentElement.querySelectorAll('div,span')).find(el =>
+      /^\d+\s*active$/i.test((el.textContent || '').trim())
+    );
+    if (!badge) return;
+    badge.setAttribute('data-aside-priority-badge', '1');
+    const set = (p, v) => badge.style.setProperty(p, v, 'important');
+    set('display', 'inline-flex');
+    set('align-items', 'center');
+    set('height', '20px');
+    set('padding', '0 8px');
+    set('border-radius', '9999px');
+    set('border', '1px solid #E5E5E5');
+    set('background', '#F5F5F5');
+    set('background-color', '#F5F5F5');
+    set('color', '#525252');
+    set('font-size', '11px');
+    set('font-weight', '600');
+    set('letter-spacing', '0.01em');
+    set('text-transform', 'none');
+    set('line-height', '16px');
+    set('box-shadow', 'none');
+    set('margin-left', '4px');
+    badge.classList.remove('bg-secondary', 'text-secondary-foreground');
+  }
+
   function boot() {
     ensureStyle();
     hideTitleBlock();
     setupToolbar();
+    maintainToolbarRight();
     setupReportingToggle();
     setupSectionCaptions();
     tagCards();
     setupMetricsTitle();
     wireClicks();
     renderFilters();
+    fixPriorityBadge();
   }
 
   function schedule() {

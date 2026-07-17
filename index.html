@@ -647,7 +647,7 @@ Error generating stack: `+a.message+`
   if (window.__radiusContentPolishV1) return;
   window.__radiusContentPolishV1 = true;
 
-  const CSS = "\n/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n   Radius UI 3.0 visual polish \u2014 Mel Metrics content\n   Keeps existing card tint fills + icons; unifies structure\n   \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */\nmain[data-magicpath-id=\"66\"],\nmain.flex-1 {\n  --r-fg: #0A0A0A;\n  --r-muted: #737373;\n  --r-border: #E5E5E5;\n  --r-card: #FFFFFF;\n  --r-primary: #5A5FF2;\n  --r-shadow-sm: 0 1px 2px -1px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.1);\n  --r-radius-card: 14px;\n  --r-radius-control: 10px;\n  --r-font: Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;\n\n  font-family: var(--r-font) !important;\n  background: #FAFAFA !important; /* soft page surface like DS app shells */\n  color: var(--r-fg);\n  padding: 20px 24px 32px !important;\n  gap: 0 !important;\n}\n\n/* Vertical section rhythm */\nmain[data-magicpath-id=\"66\"] > *,\nmain.flex-1 > * {\n  margin-bottom: 20px;\n}\nmain[data-magicpath-id=\"66\"] > *:last-child,\nmain.flex-1 > *:last-child {\n  margin-bottom: 0;\n}\n\n/* Page title */\nmain h1 {\n  font-family: var(--r-font) !important;\n  font-size: 20px !important;\n  font-weight: 600 !important;\n  letter-spacing: -0.01em !important;\n  color: var(--r-fg) !important;\n  line-height: 28px !important;\n}\nmain h1 + p,\nmain [data-magicpath-id=\"67\"] p {\n  font-size: 13px !important;\n  line-height: 18px !important;\n  color: var(--r-muted) !important;\n  margin-top: 4px !important;\n}\n\n/* Section headers \u2014 DS: no ALL CAPS UI labels */\nmain h2,\nmain h3,\nmain .text-xs.font-bold.uppercase,\nmain [class*=\"tracking-widest\"] {\n  font-family: var(--r-font) !important;\n  font-size: 13px !important;\n  font-weight: 600 !important;\n  letter-spacing: 0 !important;\n  text-transform: none !important;\n  color: var(--r-fg) !important;\n  line-height: 20px !important;\n}\n\n/* Quiet sub-labels like Prospecting chip labels stay small but not shouty */\nmain .text-\\[10px\\].font-bold.uppercase,\nmain span.text-\\[10px\\].font-bold {\n  font-size: 12px !important;\n  font-weight: 500 !important;\n  letter-spacing: 0 !important;\n  text-transform: none !important;\n  color: var(--r-muted) !important;\n}\n\n/* \u2500\u2500 White surface cards (deal / triggers / tables / activity) \u2500\u2500\n   DO NOT override background-color on tinted metric cells */\nmain .bg-card,\nmain .bg-white,\nmain [class*=\"bg-card\"],\nmain .rounded-lg.border,\nmain .rounded-xl.border {\n  border-color: var(--r-border) !important;\n  border-radius: var(--r-radius-card) !important;\n  box-shadow: var(--r-shadow-sm) !important;\n}\n\n/* Deal progression + activity trigger cards */\nmain [class*=\"rounded-lg\"].border.bg-card,\nmain .group.relative.cursor-pointer.bg-card {\n  background: var(--r-card) !important;\n  border: 1px solid var(--r-border) !important;\n  border-radius: var(--r-radius-card) !important;\n  box-shadow: var(--r-shadow-sm) !important;\n  padding: 10px 12px !important;\n  min-height: 0 !important;\n  height: auto !important;\n  transition: border-color .12s ease, box-shadow .12s ease;\n}\n/* Compact inner stack for deal/trigger metric cards */\nmain .group.relative.cursor-pointer.bg-card .p-4,\nmain .group.relative.cursor-pointer.bg-card .p-5,\nmain .group.relative.cursor-pointer.bg-card .p-6,\nmain [class*=\"rounded-lg\"].border.bg-card .p-4,\nmain [class*=\"rounded-lg\"].border.bg-card .p-5,\nmain [class*=\"rounded-lg\"].border.bg-card .p-6 {\n  padding: 0 !important;\n}\nmain .group.relative.cursor-pointer.bg-card .pb-2,\nmain .group.relative.cursor-pointer.bg-card .pt-2,\nmain .group.relative.cursor-pointer.bg-card .space-y-1,\nmain .group.relative.cursor-pointer.bg-card .space-y-2,\nmain .group.relative.cursor-pointer.bg-card .space-y-3 {\n  margin: 0 !important;\n  padding-top: 0 !important;\n  padding-bottom: 0 !important;\n}\n/* Big numbers in these cards: tight leading */\nmain .group.relative.cursor-pointer.bg-card .text-2xl,\nmain .group.relative.cursor-pointer.bg-card .text-3xl,\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-2xl\"],\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-3xl\"] {\n  margin-top: 2px !important;\n  margin-bottom: 2px !important;\n  line-height: 1 !important;\n  font-size: 22px !important;\n}\nmain .grid {\n  gap: 10px !important;\n}\nmain [class*=\"rounded-lg\"].border.bg-card:hover,\nmain .group.relative.cursor-pointer.bg-card:hover {\n  border-color: #D4D4D4 !important;\n  box-shadow: 0 2px 4px -2px rgba(0,0,0,.1), 0 4px 6px -1px rgba(0,0,0,.08) !important;\n}\n\n/* Prospecting strip container \u2014 structure only; keep child tint colors */\nmain .border.border-slate-200.rounded-xl.overflow-hidden.bg-white,\nmain .border.rounded-xl.overflow-hidden.bg-white.flex {\n  border: 1px solid var(--r-border) !important;\n  border-radius: var(--r-radius-card) !important;\n  box-shadow: var(--r-shadow-sm) !important;\n  background: var(--r-card) !important;\n  overflow: hidden !important;\n}\n\n/* Prospecting cells: keep existing bg colors; normalize padding/type only */\nmain .border.rounded-xl.overflow-hidden.bg-white.flex > .flex-1,\nmain .border.border-slate-200.rounded-xl.overflow-hidden > .flex-1 {\n  padding: 10px 12px !important;\n  min-height: 0;\n  box-sizing: border-box;\n}\nmain .border.rounded-xl.overflow-hidden.bg-white.flex > .flex-1 {\n  border-color: rgba(229, 229, 229, 0.9) !important;\n}\n\n/* Metric numbers */\nmain .text-2xl.font-bold,\nmain p.text-2xl {\n  font-family: var(--r-font) !important;\n  font-size: 24px !important;\n  font-weight: 600 !important;\n  letter-spacing: -0.02em !important;\n  line-height: 1.1 !important;\n}\n\n/* Tiny uppercase meta inside cards \u2192 quieter DS meta */\nmain .text-\\[10px\\].font-semibold.uppercase,\nmain p.text-\\[10px\\] {\n  font-size: 11px !important;\n  font-weight: 500 !important;\n  letter-spacing: 0.02em !important;\n  text-transform: none !important;\n}\n\n/* Card titles inside deal/trigger cards */\nmain .group.relative.cursor-pointer h3,\nmain .group.relative.cursor-pointer .font-semibold {\n  font-size: 14px !important;\n  font-weight: 600 !important;\n  color: var(--r-fg) !important;\n  letter-spacing: 0 !important;\n  text-transform: none !important;\n}\n\n/* Filters / buttons in header row */\nmain button,\nmain [role=\"button\"] {\n  font-family: var(--r-font) !important;\n}\nmain .rounded-full,\nmain button.rounded-full {\n  border-radius: 9999px !important;\n}\n/* Primary pill already purple \u2014 keep; ensure radius-button feel on non-pills */\nmain button.bg-primary,\nmain button[class*=\"bg-primary\"] {\n  border-radius: 10px !important;\n}\n\n/* Segmented controls — exclude count badges (bg-secondary / *active text) */\nmain .inline-flex.rounded-full:not(.bg-secondary):not([data-aside-priority-badge]),\nmain .inline-flex.items-center.rounded-full:not(.bg-secondary):not([data-aside-priority-badge]) {\n  border: 1px solid var(--r-border) !important;\n  background: #fff !important;\n  box-shadow: none !important;\n}\n/* Top Priority count badge readable muted pill */\nmain [data-aside-priority-badge=\"1\"],\nmain .flex.items-center.gap-2 > .inline-flex.items-center.rounded-full.bg-secondary {\n  background: #F5F5F5 !important;\n  background-color: #F5F5F5 !important;\n  color: #525252 !important;\n  border: 1px solid #E5E5E5 !important;\n  box-shadow: none !important;\n  font-size: 11px !important;\n  font-weight: 600 !important;\n  letter-spacing: 0.01em !important;\n  text-transform: none !important;\n}\n\n/* Dropdown-ish This Month */\nmain button.border,\nmain button[class*=\"border\"] {\n  border-color: var(--r-border) !important;\n}\n\n/* Tables */\nmain table,\nmain [role=\"table\"] {\n  font-family: var(--r-font) !important;\n}\nmain th {\n  font-size: 12px !important;\n  font-weight: 500 !important;\n  color: var(--r-muted) !important;\n  text-transform: none !important;\n  letter-spacing: 0 !important;\n}\nmain td {\n  font-size: 13px !important;\n  color: var(--r-fg) !important;\n}\n\n/* Activity list cards */\nmain .rounded-lg.border,\nmain .rounded-xl.border {\n  border-radius: var(--r-radius-card) !important;\n}\n\n/* Icon containers inside cards: do not recolor SVG strokes/fills */\nmain svg {\n  /* leave icon colors as authored */\n}\n\n/* Equalize deal/trigger grid gap */\nmain .grid {\n  gap: 12px !important;\n}\n\n/* Title block under reporting */\nmain > [data-magicpath-id=\"67\"] {\n  margin-bottom: 20px !important;\n  padding-bottom: 0 !important;\n  border-bottom: none !important;\n}\n\n/* Side rail active wash parity with primary */\n#radius-side-panel .rsp-item[aria-current=\"page\"],\n#radius-side-panel .rsp-item.is-active {\n  background: #EEF0FF !important;\n  color: #5A5FF2 !important;\n}\n\n/* Compact deal/trigger cards: kill double padding (outer + p-6 header) */\nmain .group.relative.cursor-pointer.bg-card,\nmain .rounded-lg.text-card-foreground.group.relative.cursor-pointer {\n  padding: 0 !important;\n  min-height: 0 !important;\n  height: auto !important;\n}\nmain .group.relative.cursor-pointer.bg-card > div,\nmain .rounded-lg.text-card-foreground.group.relative.cursor-pointer > div {\n  padding: 10px 12px !important;\n}\nmain .group.relative.cursor-pointer.bg-card > div.p-6,\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"p-6\"],\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"pt-4\"],\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"px-4\"],\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"pb-2\"] {\n  padding: 10px 12px 0 !important;\n}\nmain .group.relative.cursor-pointer.bg-card > div + div,\nmain .group.relative.cursor-pointer.bg-card .p-6 + div,\nmain .group.relative.cursor-pointer.bg-card [class*=\"p-6\"] + * {\n  padding: 8px 12px 12px !important;\n  margin-top: 0 !important;\n}\n/* Icon-label gap match prospecting (8px) on deal + activity cards */\nmain .group.relative.cursor-pointer.bg-card .flex.items-center.gap-2,\nmain .group.relative.cursor-pointer.bg-card .flex.items-center.gap-2.min-w-0,\nmain .rounded-lg.text-card-foreground.group.relative.cursor-pointer .flex.items-center {\n  gap: 8px !important;\n}\n/* Breathing room between title row (Outreach) and big number */\nmain .group.relative.cursor-pointer.bg-card > div:first-child {\n  padding-bottom: 2px !important;\n}\nmain .group.relative.cursor-pointer.bg-card .text-2xl,\nmain .group.relative.cursor-pointer.bg-card .text-3xl,\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-2xl\"],\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-3xl\"] {\n  margin-top: 6px !important;\n  margin-bottom: 4px !important;\n  line-height: 1.05 !important;\n  font-size: 24px !important;\n}\n\nmain .group.relative.cursor-pointer.bg-card h3 {\n  font-size: 13px !important;\n  line-height: 1.2 !important;\n}\n";
+  const CSS = "\n/* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n   Radius UI 3.0 visual polish \u2014 Mel Metrics content\n   Keeps existing card tint fills + icons; unifies structure\n   \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */\nmain[data-magicpath-id=\"66\"],\nmain.flex-1 {\n  --r-fg: #0A0A0A;\n  --r-muted: #737373;\n  --r-border: #E5E5E5;\n  --r-card: #FFFFFF;\n  --r-primary: #5A5FF2;\n  --r-shadow-sm: 0 1px 2px -1px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.1);\n  --r-radius-card: 14px;\n  --r-radius-control: 10px;\n  --r-font: Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;\n\n  font-family: var(--r-font) !important;\n  background: #FAFAFA !important; /* soft page surface like DS app shells */\n  color: var(--r-fg);\n  padding: 20px 24px 32px !important;\n  gap: 0 !important;\n}\n\n/* Vertical section rhythm */\nmain[data-magicpath-id=\"66\"] > *,\nmain.flex-1 > * {\n  margin-bottom: 20px;\n}\nmain[data-magicpath-id=\"66\"] > *:last-child,\nmain.flex-1 > *:last-child {\n  margin-bottom: 0;\n}\n\n/* Page title */\nmain h1 {\n  font-family: var(--r-font) !important;\n  font-size: 20px !important;\n  font-weight: 600 !important;\n  letter-spacing: -0.01em !important;\n  color: var(--r-fg) !important;\n  line-height: 28px !important;\n}\nmain h1 + p,\nmain [data-magicpath-id=\"67\"] p {\n  font-size: 13px !important;\n  line-height: 18px !important;\n  color: var(--r-muted) !important;\n  margin-top: 4px !important;\n}\n\n/* Section headers \u2014 DS: no ALL CAPS UI labels */\nmain h2,\nmain h3,\nmain .text-xs.font-bold.uppercase,\nmain [class*=\"tracking-widest\"] {\n  font-family: var(--r-font) !important;\n  font-size: 13px !important;\n  font-weight: 600 !important;\n  letter-spacing: 0 !important;\n  text-transform: none !important;\n  color: var(--r-fg) !important;\n  line-height: 20px !important;\n}\n\n/* Quiet sub-labels like Prospecting chip labels stay small but not shouty */\nmain .text-\\[10px\\].font-bold.uppercase,\nmain span.text-\\[10px\\].font-bold {\n  font-size: 12px !important;\n  font-weight: 500 !important;\n  letter-spacing: 0 !important;\n  text-transform: none !important;\n  color: var(--r-muted) !important;\n}\n\n/* \u2500\u2500 White surface cards (deal / triggers / tables / activity) \u2500\u2500\n   DO NOT override background-color on tinted metric cells */\n/* Cards only — exclude Select triggers */\nmain .bg-card:not(button):not([aria-haspopup]),\nmain .bg-white:not(button):not([aria-haspopup]),\nmain [class*=\"bg-card\"]:not(button):not([aria-haspopup]),\nmain .rounded-lg.border:not(button):not([aria-haspopup]),\nmain .rounded-xl.border:not(button):not([aria-haspopup]) {\n  border-color: var(--r-border) !important;\n  border-radius: var(--r-radius-card) !important;\n  box-shadow: var(--r-shadow-sm) !important;\n}\n\n/* Deal progression + activity trigger cards */\nmain [class*=\"rounded-lg\"].border.bg-card,\nmain .group.relative.cursor-pointer.bg-card {\n  background: var(--r-card) !important;\n  border: 1px solid var(--r-border) !important;\n  border-radius: var(--r-radius-card) !important;\n  box-shadow: var(--r-shadow-sm) !important;\n  padding: 10px 12px !important;\n  min-height: 0 !important;\n  height: auto !important;\n  transition: border-color .12s ease, box-shadow .12s ease;\n}\n/* Compact inner stack for deal/trigger metric cards */\nmain .group.relative.cursor-pointer.bg-card .p-4,\nmain .group.relative.cursor-pointer.bg-card .p-5,\nmain .group.relative.cursor-pointer.bg-card .p-6,\nmain [class*=\"rounded-lg\"].border.bg-card .p-4,\nmain [class*=\"rounded-lg\"].border.bg-card .p-5,\nmain [class*=\"rounded-lg\"].border.bg-card .p-6 {\n  padding: 0 !important;\n}\nmain .group.relative.cursor-pointer.bg-card .pb-2,\nmain .group.relative.cursor-pointer.bg-card .pt-2,\nmain .group.relative.cursor-pointer.bg-card .space-y-1,\nmain .group.relative.cursor-pointer.bg-card .space-y-2,\nmain .group.relative.cursor-pointer.bg-card .space-y-3 {\n  margin: 0 !important;\n  padding-top: 0 !important;\n  padding-bottom: 0 !important;\n}\n/* Big numbers in these cards: tight leading */\nmain .group.relative.cursor-pointer.bg-card .text-2xl,\nmain .group.relative.cursor-pointer.bg-card .text-3xl,\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-2xl\"],\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-3xl\"] {\n  margin-top: 2px !important;\n  margin-bottom: 2px !important;\n  line-height: 1 !important;\n  font-size: 22px !important;\n}\nmain .grid {\n  gap: 10px !important;\n}\nmain [class*=\"rounded-lg\"].border.bg-card:hover,\nmain .group.relative.cursor-pointer.bg-card:hover {\n  border-color: #D4D4D4 !important;\n  box-shadow: 0 2px 4px -2px rgba(0,0,0,.1), 0 4px 6px -1px rgba(0,0,0,.08) !important;\n}\n\n/* Prospecting strip container \u2014 structure only; keep child tint colors */\nmain .border.border-slate-200.rounded-xl.overflow-hidden.bg-white,\nmain .border.rounded-xl.overflow-hidden.bg-white.flex {\n  border: 1px solid var(--r-border) !important;\n  border-radius: var(--r-radius-card) !important;\n  box-shadow: var(--r-shadow-sm) !important;\n  background: var(--r-card) !important;\n  overflow: hidden !important;\n}\n\n/* Prospecting cells: keep existing bg colors; normalize padding/type only */\nmain .border.rounded-xl.overflow-hidden.bg-white.flex > .flex-1,\nmain .border.border-slate-200.rounded-xl.overflow-hidden > .flex-1 {\n  padding: 10px 12px !important;\n  min-height: 0;\n  box-sizing: border-box;\n}\nmain .border.rounded-xl.overflow-hidden.bg-white.flex > .flex-1 {\n  border-color: rgba(229, 229, 229, 0.9) !important;\n}\n\n/* Metric numbers */\nmain .text-2xl.font-bold,\nmain p.text-2xl {\n  font-family: var(--r-font) !important;\n  font-size: 24px !important;\n  font-weight: 600 !important;\n  letter-spacing: -0.02em !important;\n  line-height: 1.1 !important;\n}\n\n/* Tiny uppercase meta inside cards \u2192 quieter DS meta */\nmain .text-\\[10px\\].font-semibold.uppercase,\nmain p.text-\\[10px\\] {\n  font-size: 11px !important;\n  font-weight: 500 !important;\n  letter-spacing: 0.02em !important;\n  text-transform: none !important;\n}\n\n/* Card titles inside deal/trigger cards */\nmain .group.relative.cursor-pointer h3,\nmain .group.relative.cursor-pointer .font-semibold {\n  font-size: 14px !important;\n  font-weight: 600 !important;\n  color: var(--r-fg) !important;\n  letter-spacing: 0 !important;\n  text-transform: none !important;\n}\n\n/* Filters / buttons in header row */\nmain button,\nmain [role=\"button\"] {\n  font-family: var(--r-font) !important;\n}\nmain .rounded-full,\nmain button.rounded-full {\n  border-radius: 9999px !important;\n}\n/* Primary pill already purple \u2014 keep; ensure radius-button feel on non-pills */\nmain button.bg-primary,\nmain button[class*=\"bg-primary\"] {\n  border-radius: 10px !important;\n}\n\n/* Segmented controls — exclude count badges (bg-secondary / *active text) */\nmain .inline-flex.rounded-full:not(.bg-secondary):not([data-aside-priority-badge]),\nmain .inline-flex.items-center.rounded-full:not(.bg-secondary):not([data-aside-priority-badge]) {\n  border: 1px solid var(--r-border) !important;\n  background: #fff !important;\n  box-shadow: none !important;\n}\n/* Top Priority count badge readable muted pill */\nmain [data-aside-priority-badge=\"1\"],\nmain .flex.items-center.gap-2 > .inline-flex.items-center.rounded-full.bg-secondary {\n  background: #F5F5F5 !important;\n  background-color: #F5F5F5 !important;\n  color: #525252 !important;\n  border: 1px solid #E5E5E5 !important;\n  box-shadow: none !important;\n  font-size: 11px !important;\n  font-weight: 600 !important;\n  letter-spacing: 0.01em !important;\n  text-transform: none !important;\n}\n\n/* Dropdown-ish This Month */\nmain button.border,\nmain button[class*=\"border\"] {\n  border-color: var(--r-border) !important;\n}\n\n/* Tables */\nmain table,\nmain [role=\"table\"] {\n  font-family: var(--r-font) !important;\n}\nmain th {\n  font-size: 12px !important;\n  font-weight: 500 !important;\n  color: var(--r-muted) !important;\n  text-transform: none !important;\n  letter-spacing: 0 !important;\n}\nmain td {\n  font-size: 13px !important;\n  color: var(--r-fg) !important;\n}\n\n/* Activity list cards */\nmain .rounded-lg.border,\nmain .rounded-xl.border {\n  border-radius: var(--r-radius-card) !important;\n}\n\n/* Icon containers inside cards: do not recolor SVG strokes/fills */\nmain svg {\n  /* leave icon colors as authored */\n}\n\n/* Equalize deal/trigger grid gap */\nmain .grid {\n  gap: 12px !important;\n}\n\n/* Title block under reporting */\nmain > [data-magicpath-id=\"67\"] {\n  margin-bottom: 20px !important;\n  padding-bottom: 0 !important;\n  border-bottom: none !important;\n}\n\n/* Side rail active wash parity with primary */\n#radius-side-panel .rsp-item[aria-current=\"page\"],\n#radius-side-panel .rsp-item.is-active {\n  background: #EEF0FF !important;\n  color: #5A5FF2 !important;\n}\n\n/* Compact deal/trigger cards: kill double padding (outer + p-6 header) */\nmain .group.relative.cursor-pointer.bg-card,\nmain .rounded-lg.text-card-foreground.group.relative.cursor-pointer {\n  padding: 0 !important;\n  min-height: 0 !important;\n  height: auto !important;\n}\nmain .group.relative.cursor-pointer.bg-card > div,\nmain .rounded-lg.text-card-foreground.group.relative.cursor-pointer > div {\n  padding: 10px 12px !important;\n}\nmain .group.relative.cursor-pointer.bg-card > div.p-6,\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"p-6\"],\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"pt-4\"],\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"px-4\"],\nmain .group.relative.cursor-pointer.bg-card > div[class*=\"pb-2\"] {\n  padding: 10px 12px 0 !important;\n}\nmain .group.relative.cursor-pointer.bg-card > div + div,\nmain .group.relative.cursor-pointer.bg-card .p-6 + div,\nmain .group.relative.cursor-pointer.bg-card [class*=\"p-6\"] + * {\n  padding: 8px 12px 12px !important;\n  margin-top: 0 !important;\n}\n/* Icon-label gap match prospecting (8px) on deal + activity cards */\nmain .group.relative.cursor-pointer.bg-card .flex.items-center.gap-2,\nmain .group.relative.cursor-pointer.bg-card .flex.items-center.gap-2.min-w-0,\nmain .rounded-lg.text-card-foreground.group.relative.cursor-pointer .flex.items-center {\n  gap: 8px !important;\n}\n/* Breathing room between title row (Outreach) and big number */\nmain .group.relative.cursor-pointer.bg-card > div:first-child {\n  padding-bottom: 2px !important;\n}\nmain .group.relative.cursor-pointer.bg-card .text-2xl,\nmain .group.relative.cursor-pointer.bg-card .text-3xl,\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-2xl\"],\nmain .group.relative.cursor-pointer.bg-card [class*=\"text-3xl\"] {\n  margin-top: 6px !important;\n  margin-bottom: 4px !important;\n  line-height: 1.05 !important;\n  font-size: 24px !important;\n}\n\nmain .group.relative.cursor-pointer.bg-card h3 {\n  font-size: 13px !important;\n  line-height: 1.2 !important;\n}\n";
 
   function ensureStyle() {
     let style = document.getElementById('radius-content-polish-style');
@@ -731,20 +731,65 @@ Error generating stack: `+a.message+`
       document.head.appendChild(style);
     }
     style.textContent = `
-      /* Dropdowns — Radius Select default */
-      main button[aria-haspopup="menu"] {
+      /* Dropdowns — Radius UI 3.0 Select default (single chrome for all) */
+      /* Beat content-polish card radius (main .bg-white / .rounded-xl.border → 14px) */
+      main button[aria-haspopup="menu"],
+      main button[aria-haspopup="listbox"],
+      main button.bg-white[aria-haspopup="menu"],
+      main button.rounded-xl[aria-haspopup="menu"],
+      main button.rounded-lg[aria-haspopup="menu"],
+      main button.rounded-xl.border[aria-haspopup="menu"],
+      main button.rounded-lg.border[aria-haspopup="menu"],
+      main .bg-white.border[aria-haspopup="menu"],
+      #aside-campaign-filter-trigger {
         height: 32px !important;
         min-height: 32px !important;
         max-height: 32px !important;
         padding: 0 12px !important;
         border-radius: 8px !important;
+        border: 1px solid #E5E5E5 !important;
+        background: #FFFFFF !important;
+        box-shadow: none !important;
         font-size: 14px !important;
         font-weight: 500 !important;
+        line-height: 20px !important;
         gap: 8px !important;
+        color: #0A0A0A !important;
       }
-      main button[aria-haspopup="menu"] svg {
+      main button[aria-haspopup="menu"]:hover,
+      main button[aria-haspopup="listbox"]:hover,
+      #aside-campaign-filter-trigger:hover {
+        background: #F5F5F5 !important;
+        box-shadow: none !important;
+      }
+      main button[aria-haspopup="menu"] svg,
+      main button[aria-haspopup="listbox"] svg,
+      #aside-campaign-filter-trigger svg {
         width: 16px !important;
         height: 16px !important;
+        flex-shrink: 0 !important;
+      }
+      /* Open menus / popovers — flat Select popover, radius 8, no shadow */
+      [data-radix-menu-content],
+      [data-radix-dropdown-menu-content],
+      [role="menu"],
+      [role="listbox"],
+      [data-state="open"][role="menu"],
+      [role="menu"].shadow-md,
+      [role="menu"][class*="shadow"],
+      div.z-50[role="menu"],
+      div[class*="z-50"][role="menu"],
+      div[class*="z-50"][class*="rounded"][role="menu"],
+      #aside-campaign-filter-panel {
+        border-radius: 8px !important;
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        border: 1px solid #E5E5E5 !important;
+        background: #FFFFFF !important;
+      }
+      [role="menuitem"],
+      [role="option"] {
+        border-radius: 6px !important;
       }
 
       /* Scope tabs — Radius UI 3.0 Tabs default */
@@ -1036,6 +1081,8 @@ Error generating stack: `+a.message+`
     dateBtn.style.setProperty('padding', '0 12px', 'important');
     dateBtn.style.setProperty('font-size', '14px', 'important');
     dateBtn.style.setProperty('font-weight', '500', 'important');
+    dateBtn.style.setProperty('box-shadow', 'none', 'important');
+    dateBtn.style.setProperty('border', '1px solid #E5E5E5', 'important');
     right.appendChild(dateBtn);
 
     controls.innerHTML = '';
@@ -1087,6 +1134,9 @@ Error generating stack: `+a.message+`
       btn.style.setProperty('padding', '0 12px', 'important');
       btn.style.setProperty('font-size', '14px', 'important');
       btn.style.setProperty('font-weight', '500', 'important');
+      btn.style.setProperty('box-shadow', 'none', 'important');
+      btn.style.setProperty('border', '1px solid #E5E5E5', 'important');
+      btn.style.setProperty('background', '#FFFFFF', 'important');
       btn.style.setProperty('flex-shrink', '0', 'important');
       if (ch !== btn) {
         ch.style.setProperty('display', 'flex', 'important');
@@ -1530,8 +1580,44 @@ Error generating stack: `+a.message+`
     badge.classList.remove('bg-secondary', 'text-secondary-foreground');
   }
 
+
+  function styleSelectTrigger(btn) {
+    if (!btn || btn.tagName !== 'BUTTON') return;
+    const set = (p, v) => btn.style.setProperty(p, v, 'important');
+    set('height', '32px');
+    set('min-height', '32px');
+    set('max-height', '32px');
+    set('padding', '0 12px');
+    set('border-radius', '8px');
+    set('border', '1px solid #E5E5E5');
+    set('background', '#FFFFFF');
+    set('box-shadow', 'none');
+    set('font-size', '14px');
+    set('font-weight', '500');
+    set('line-height', '20px');
+    set('gap', '8px');
+    set('color', '#0A0A0A');
+    btn.querySelectorAll('svg').forEach((svg) => {
+      svg.style.setProperty('width', '16px', 'important');
+      svg.style.setProperty('height', '16px', 'important');
+      svg.style.setProperty('flex-shrink', '0', 'important');
+    });
+  }
+
+  function unifyAllSelectTriggers() {
+    document.querySelectorAll('main button[aria-haspopup="menu"], main button[aria-haspopup="listbox"], #aside-campaign-filter-trigger').forEach(styleSelectTrigger);
+    // open menus
+    document.querySelectorAll('[role="menu"], [data-radix-menu-content], [data-radix-dropdown-menu-content], #aside-campaign-filter-panel').forEach((el) => {
+      el.style.setProperty('border-radius', '8px', 'important');
+      el.style.setProperty('box-shadow', 'none', 'important');
+      el.style.setProperty('border', '1px solid #E5E5E5', 'important');
+      el.style.setProperty('background', '#FFFFFF', 'important');
+    });
+  }
+
   function boot() {
     ensureStyle();
+    unifyAllSelectTriggers();
     hideTitleBlock();
     setupToolbar();
     maintainToolbarRight();
@@ -1543,6 +1629,7 @@ Error generating stack: `+a.message+`
     renderFilters();
     fixPriorityBadge();
     setupMetricsActivityList();
+    unifyAllSelectTriggers();
   }
 
   function schedule() {
@@ -1563,6 +1650,839 @@ Error generating stack: `+a.message+`
   }
 
   // Allow re-entry on later boots: only style/script flag stays; structural ops are idempotent
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', schedule);
+  else schedule();
+})();
+</script>
+
+
+<script id="aside-campaign-filter-inject">
+/**
+ * Campaign filter — Reporting Dashboard
+ * Radius UI 3.0 Combobox (searchable Select pattern)
+ * Single-select · default All campaigns · scopes all Reporting tabs metrics
+ */
+(function () {
+  if (window.__asideCampaignFilterV1) return;
+  window.__asideCampaignFilterV1 = true;
+
+  const T = {
+    border: '#E5E5E5',
+    input: '#E5E5E5',
+    muted: '#737373',
+    fg: '#0A0A0A',
+    primary: '#5A5FF2',
+    primarySoft: 'rgba(90,95,242,0.08)',
+    mutedBg: '#F5F5F5',
+    popover: '#FFFFFF',
+    shadow: '0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1)',
+  };
+
+  const CAMPAIGNS = [
+    { id: 'all', name: 'All campaigns' },
+    { id: 'spring-buyer', name: 'Spring Buyer Outreach' },
+    { id: 'listing-hsr', name: 'Listing Launch — HSR' },
+    { id: 'sphere-q2', name: 'Sphere Nurture Q2' },
+    { id: 'open-house', name: 'Open House Follow-up' },
+    { id: 'expired', name: 'Expired Listing Revive' },
+    { id: 'relocation', name: 'Relocation Buyers 2026' },
+  ];
+
+  // Deterministic mock weights so each campaign shows a distinct drill-in
+  const WEIGHTS = {
+    all: 1,
+    'spring-buyer': 0.42,
+    'listing-hsr': 0.28,
+    'sphere-q2': 0.55,
+    'open-house': 0.33,
+    expired: 0.18,
+    relocation: 0.24,
+  };
+
+  const state = {
+    campaignId: 'all',
+    open: false,
+    query: '',
+    baselines: new WeakMap(),
+  };
+
+  function ensureStyle() {
+    let style = document.getElementById('aside-campaign-filter-style');
+    if (!style) {
+      style = document.createElement('style');
+      style.id = 'aside-campaign-filter-style';
+      document.head.appendChild(style);
+    }
+    style.textContent = `
+      #aside-campaign-filter {
+        position: relative;
+        flex-shrink: 0;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        z-index: 40;
+      }
+      #aside-campaign-filter-trigger {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 8px !important;
+        height: 32px !important;
+        min-height: 32px !important;
+        max-height: 32px !important;
+        min-width: 180px !important;
+        max-width: 260px !important;
+        padding: 0 12px !important;
+        border-radius: 8px !important;
+        border: 1px solid ${T.input} !important;
+        background: #FFFFFF !important;
+        color: ${T.fg} !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        line-height: 20px !important;
+        box-shadow: none !important;
+        cursor: pointer !important;
+        outline: none !important;
+      }
+      #aside-campaign-filter-trigger:hover {
+        background: ${T.mutedBg} !important;
+      }
+      #aside-campaign-filter-trigger[data-open="1"] {
+        border-color: ${T.primary} !important;
+        box-shadow: 0 0 0 2px rgba(90,95,242,0.15) !important;
+      }
+      #aside-campaign-filter-trigger[data-filtered="1"] {
+        border-color: ${T.primary} !important;
+        background: ${T.primarySoft} !important;
+        color: ${T.primary} !important;
+      }
+      #aside-campaign-filter-label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 200px;
+      }
+      #aside-campaign-filter-chevron {
+        width: 16px;
+        height: 16px;
+        color: ${T.muted};
+        flex-shrink: 0;
+      }
+      #aside-campaign-filter-trigger[data-filtered="1"] #aside-campaign-filter-chevron {
+        color: ${T.primary};
+      }
+      #aside-campaign-filter-panel {
+        position: absolute;
+        top: calc(100% + 4px);
+        right: 0;
+        width: 280px;
+        min-width: 240px;
+        max-height: 320px;
+        overflow: hidden;
+        display: none;
+        flex-direction: column;
+        border-radius: 8px;
+        background: ${T.popover};
+        border: 1px solid #E5E5E5;
+        box-shadow: none;
+        z-index: 50;
+      }
+      #aside-campaign-filter-panel[data-open="1"] {
+        display: flex !important;
+      }
+      #aside-campaign-filter-search-wrap {
+        padding: 4px;
+        flex-shrink: 0;
+        border-bottom: 1px solid ${T.border};
+      }
+      #aside-campaign-filter-search {
+        width: 100%;
+        height: 32px;
+        border-radius: 10px;
+        border: 1px solid ${T.input};
+        background: rgba(229,229,229,0.3);
+        padding: 4px 10px 4px 32px;
+        font-size: 14px;
+        font-weight: 400;
+        color: ${T.fg};
+        outline: none;
+        box-sizing: border-box;
+        font-family: inherit;
+      }
+      #aside-campaign-filter-search::placeholder {
+        color: ${T.muted};
+      }
+      #aside-campaign-filter-search:focus {
+        border-color: ${T.primary};
+        background: #FFFFFF;
+      }
+      #aside-campaign-filter-search-icon {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 14px;
+        height: 14px;
+        color: ${T.muted};
+        pointer-events: none;
+      }
+      #aside-campaign-filter-search-box {
+        position: relative;
+      }
+      #aside-campaign-filter-list {
+        overflow-y: auto;
+        padding: 4px;
+        max-height: 260px;
+      }
+      .aside-campaign-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        min-height: 32px;
+        padding: 6px 8px;
+        border-radius: 8px;
+        border: 0;
+        background: transparent;
+        color: ${T.fg};
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+        width: 100%;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .aside-campaign-item:hover {
+        background: ${T.mutedBg};
+      }
+      .aside-campaign-item[data-selected="1"] {
+        background: ${T.primarySoft};
+        color: ${T.primary};
+        font-weight: 500;
+      }
+      .aside-campaign-item-check {
+        width: 14px;
+        height: 14px;
+        color: ${T.primary};
+        flex-shrink: 0;
+        opacity: 0;
+      }
+      .aside-campaign-item[data-selected="1"] .aside-campaign-item-check {
+        opacity: 1;
+      }
+      #aside-campaign-filter-empty {
+        padding: 16px 12px;
+        text-align: center;
+        color: ${T.muted};
+        font-size: 13px;
+      }
+      /* soft dim on filtered numbers for feedback */
+      main [data-aside-campaign-num="1"] {
+        transition: color .12s ease;
+      }
+      main[data-campaign-filtered="1"] [data-aside-campaign-num="1"] {
+        color: inherit;
+      }
+
+      /* Campaign switch skeleton (<1s) */
+      main[data-aside-campaign-loading="1"] > *:not(#aside-campaign-skel-root) {
+        /* keep toolbar/reporting chrome visible; skel covers metrics body via overlay */
+      }
+      #aside-campaign-skel-root {
+        display: none;
+        pointer-events: none;
+        margin: 0;
+        padding: 0 0 24px;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      main[data-aside-campaign-loading="1"] #aside-campaign-skel-root {
+        display: block !important;
+      }
+      main[data-aside-campaign-loading="1"] [data-aside-campaign-body="1"] {
+        display: none !important;
+      }
+      .aside-camp-skel-pulse {
+        background: linear-gradient(90deg, #F5F5F5 0%, #EFEFEF 40%, #F5F5F5 80%);
+        background-size: 200% 100%;
+        animation: asideCampSkel 0.9s ease-in-out infinite;
+        border-radius: 8px;
+      }
+      @keyframes asideCampSkel {
+        0% { background-position: 100% 0; }
+        100% { background-position: -100% 0; }
+      }
+      .aside-camp-skel-section { margin: 0 0 20px; }
+      .aside-camp-skel-label {
+        width: 140px;
+        height: 12px;
+        margin: 0 0 12px;
+        border-radius: 6px;
+      }
+      .aside-camp-skel-kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
+      }
+      @media (max-width: 1100px) {
+        .aside-camp-skel-kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      }
+      .aside-camp-skel-kpi {
+        height: 96px;
+        border: 1px solid #E5E5E5;
+        border-radius: 14px;
+        background: #FFFFFF;
+        padding: 12px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .aside-camp-skel-kpi .l { width: 48%; height: 10px; border-radius: 6px; }
+      .aside-camp-skel-kpi .n { width: 36%; height: 22px; border-radius: 6px; margin-top: auto; }
+      .aside-camp-skel-kpi .s { width: 40%; height: 8px; border-radius: 6px; }
+      .aside-camp-skel-row {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
+      }
+      @media (max-width: 1100px) {
+        .aside-camp-skel-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      }
+      .aside-camp-skel-card {
+        height: 88px;
+        border: 1px solid #E5E5E5;
+        border-radius: 14px;
+        background: #FFFFFF;
+        padding: 12px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .aside-camp-skel-card .l { width: 42%; height: 10px; }
+      .aside-camp-skel-card .n { width: 28%; height: 20px; margin-top: auto; }
+      .aside-camp-skel-list {
+        border: 1px solid #E5E5E5;
+        border-radius: 14px;
+        background: #FFFFFF;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .aside-camp-skel-list-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .aside-camp-skel-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 9999px;
+        flex-shrink: 0;
+      }
+      .aside-camp-skel-lines { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+      .aside-camp-skel-lines .a { width: 38%; height: 10px; }
+      .aside-camp-skel-lines .b { width: 62%; height: 8px; }
+    `;
+  }
+
+  function currentCampaign() {
+    return CAMPAIGNS.find((c) => c.id === state.campaignId) || CAMPAIGNS[0];
+  }
+
+  function chevronSvg() {
+    return `<svg id="aside-campaign-filter-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  }
+
+  function checkSvg() {
+    return `<svg class="aside-campaign-item-check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  }
+
+  function searchSvg() {
+    return `<svg id="aside-campaign-filter-search-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`;
+  }
+
+  function ensureMount() {
+    ensureStyle();
+    let root = document.getElementById('aside-campaign-filter');
+    if (!root) {
+      root = document.createElement('div');
+      root.id = 'aside-campaign-filter';
+      root.innerHTML = `
+        <button type="button" id="aside-campaign-filter-trigger" aria-haspopup="listbox" aria-expanded="false">
+          <span id="aside-campaign-filter-label">All campaigns</span>
+          ${chevronSvg()}
+        </button>
+        <div id="aside-campaign-filter-panel" role="listbox" aria-label="AI campaigns">
+          <div id="aside-campaign-filter-search-wrap">
+            <div id="aside-campaign-filter-search-box">
+              ${searchSvg()}
+              <input id="aside-campaign-filter-search" type="text" placeholder="Search campaigns…" autocomplete="off" spellcheck="false" />
+            </div>
+          </div>
+          <div id="aside-campaign-filter-list"></div>
+        </div>
+      `;
+      wireRoot(root);
+    }
+    placeInToolbar(root);
+    syncTrigger();
+    if (state.open) renderList();
+    return root;
+  }
+
+  function placeInToolbar(root) {
+    const right = document.querySelector('[data-aside-toolbar-right="1"]');
+    if (right) {
+      // Campaign first in right cluster (before date)
+      if (root.parentElement !== right || right.firstElementChild !== root) {
+        right.insertBefore(root, right.firstChild);
+      }
+      return;
+    }
+    // fallback: near date button
+    const dateBtn = Array.from(document.querySelectorAll('button[aria-haspopup="menu"]')).find((b) =>
+      /This Month|Last 7|Last 30|Today/i.test(b.textContent || '')
+    );
+    if (dateBtn && dateBtn.parentElement) {
+      const parent = dateBtn.parentElement;
+      if (root.parentElement !== parent) parent.insertBefore(root, dateBtn);
+    }
+  }
+
+  function wireRoot(root) {
+    if (root.__wired) return;
+    root.__wired = true;
+    const trigger = root.querySelector('#aside-campaign-filter-trigger');
+    const panel = root.querySelector('#aside-campaign-filter-panel');
+    const search = root.querySelector('#aside-campaign-filter-search');
+
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      state.open = !state.open;
+      if (state.open) {
+        state.query = '';
+        search.value = '';
+        renderList();
+        setTimeout(() => search.focus(), 0);
+      }
+      syncTrigger();
+    });
+
+    search.addEventListener('input', () => {
+      state.query = search.value || '';
+      renderList();
+    });
+    search.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        state.open = false;
+        syncTrigger();
+        trigger.focus();
+      }
+      e.stopPropagation();
+    });
+    search.addEventListener('click', (e) => e.stopPropagation());
+
+    document.addEventListener(
+      'click',
+      (e) => {
+        if (!state.open) return;
+        if (root.contains(e.target)) return;
+        state.open = false;
+        syncTrigger();
+      },
+      true
+    );
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && state.open) {
+        state.open = false;
+        syncTrigger();
+      }
+    });
+  }
+
+  function syncTrigger() {
+    const trigger = document.getElementById('aside-campaign-filter-trigger');
+    const panel = document.getElementById('aside-campaign-filter-panel');
+    const label = document.getElementById('aside-campaign-filter-label');
+    if (!trigger || !panel || !label) return;
+    const c = currentCampaign();
+    label.textContent = c.name;
+    trigger.setAttribute('data-open', state.open ? '1' : '0');
+    trigger.setAttribute('data-filtered', state.campaignId === 'all' ? '0' : '1');
+    trigger.setAttribute('aria-expanded', state.open ? 'true' : 'false');
+    panel.setAttribute('data-open', state.open ? '1' : '0');
+    document.documentElement.setAttribute('data-campaign-id', state.campaignId);
+    const main = document.querySelector('main');
+    if (main) main.setAttribute('data-campaign-filtered', state.campaignId === 'all' ? '0' : '1');
+  }
+
+  function renderList() {
+    const list = document.getElementById('aside-campaign-filter-list');
+    if (!list) return;
+    const q = (state.query || '').trim().toLowerCase();
+    const items = CAMPAIGNS.filter((c) => {
+      if (!q) return true;
+      if (c.id === 'all') return 'all campaigns'.includes(q) || 'all'.includes(q);
+      return c.name.toLowerCase().includes(q);
+    });
+    if (!items.length) {
+      list.innerHTML = `<div id="aside-campaign-filter-empty">No campaigns found</div>`;
+      return;
+    }
+    list.innerHTML = items
+      .map((c) => {
+        const sel = c.id === state.campaignId ? '1' : '0';
+        return `<button type="button" class="aside-campaign-item" role="option" data-id="${c.id}" data-selected="${sel}" aria-selected="${sel === '1'}">
+          <span>${escapeHtml(c.name)}</span>
+          ${checkSvg()}
+        </button>`;
+      })
+      .join('');
+    list.querySelectorAll('.aside-campaign-item').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        selectCampaign(btn.getAttribute('data-id'));
+      });
+    });
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function selectCampaign(id) {
+    const next = id || 'all';
+    const same = next === state.campaignId;
+    state.campaignId = next;
+    state.open = false;
+    syncTrigger();
+    if (same) {
+      applyCampaignFilter();
+      return;
+    }
+    // Brief skeleton while campaign metrics "load" — under 1s
+    runCampaignSkeletonLoad();
+  }
+
+  function ensureCampaignBodyMark() {
+    const main = document.querySelector('main');
+    if (!main) return null;
+    // Mark metric body siblings after toolbar/header row so skeleton can hide them
+    const kids = Array.from(main.children);
+    kids.forEach((el) => {
+      if (el.id === 'aside-campaign-skel-root') return;
+      if (el.id === 'radius-reporting-inpage') return;
+      // keep top reporting chrome + first toolbar row visible
+      const isToolbarish =
+        el.querySelector?.('[data-aside-toolbar-ready="1"]') ||
+        el.querySelector?.('#radius-scope-tabs') ||
+        el.querySelector?.('#aside-campaign-filter') ||
+        /Reporting/i.test(el.textContent || '') && el.querySelector?.('[role="tablist"]');
+      // Heuristic: hide large content blocks under header
+      if (el.querySelector?.('h2') || el.querySelector?.('[aria-label="Deal Progression"]') || el.querySelector?.('.grid')) {
+        el.setAttribute('data-aside-campaign-body', '1');
+      }
+    });
+    // Broader: anything after reporting inject that isn't skel
+    let seenTabs = false;
+    kids.forEach((el) => {
+      if (el.id === 'aside-campaign-skel-root') return;
+      if (el.id === 'radius-reporting-inpage' || el.querySelector?.('#radius-reporting-inpage')) {
+        seenTabs = true;
+        return;
+      }
+      if (el.querySelector?.('[data-aside-toolbar-ready="1"]') || el.querySelector?.('#aside-campaign-filter')) {
+        seenTabs = true;
+        return;
+      }
+      if (seenTabs && el.id !== 'aside-campaign-skel-root') {
+        // Don't hide if it's only the toolbar row
+        if (el.querySelector?.('[data-aside-toolbar-ready="1"]') && !el.querySelector?.('h2')) return;
+        if (el.querySelector?.('h2, h3, [aria-label="Deal Progression"], [aria-label="Client Activity Triggers"]') ||
+            (el.textContent || '').match(/Prospecting|Deal Progression|Metrics Activity|Top Priority/i)) {
+          el.setAttribute('data-aside-campaign-body', '1');
+        }
+      }
+    });
+    return main;
+  }
+
+  function skelBlock(cls) {
+    return `<div class="aside-camp-skel-pulse ${cls}"></div>`;
+  }
+
+  function ensureSkeletonRoot() {
+    const main = document.querySelector('main');
+    if (!main) return null;
+    let root = document.getElementById('aside-campaign-skel-root');
+    if (!root) {
+      root = document.createElement('div');
+      root.id = 'aside-campaign-skel-root';
+      root.setAttribute('aria-hidden', 'true');
+      root.innerHTML = `
+        <div class="aside-camp-skel-section">
+          ${skelBlock('aside-camp-skel-label')}
+          <div class="aside-camp-skel-kpi-grid">
+            ${Array.from({ length: 5 }).map(() => `
+              <div class="aside-camp-skel-kpi">
+                ${skelBlock('l')}
+                ${skelBlock('n')}
+                ${skelBlock('s')}
+              </div>`).join('')}
+          </div>
+        </div>
+        <div class="aside-camp-skel-section">
+          ${skelBlock('aside-camp-skel-label')}
+          <div class="aside-camp-skel-row">
+            ${Array.from({ length: 5 }).map(() => `
+              <div class="aside-camp-skel-card">
+                ${skelBlock('l')}
+                ${skelBlock('n')}
+              </div>`).join('')}
+          </div>
+        </div>
+        <div class="aside-camp-skel-section">
+          ${skelBlock('aside-camp-skel-label')}
+          <div class="aside-camp-skel-row" style="grid-template-columns:repeat(6,minmax(0,1fr))">
+            ${Array.from({ length: 6 }).map(() => `
+              <div class="aside-camp-skel-card">
+                ${skelBlock('l')}
+                ${skelBlock('n')}
+              </div>`).join('')}
+          </div>
+        </div>
+        <div class="aside-camp-skel-section">
+          ${skelBlock('aside-camp-skel-label')}
+          <div class="aside-camp-skel-list">
+            ${Array.from({ length: 5 }).map(() => `
+              <div class="aside-camp-skel-list-row">
+                ${skelBlock('aside-camp-skel-avatar')}
+                <div class="aside-camp-skel-lines">
+                  ${skelBlock('a')}
+                  ${skelBlock('b')}
+                </div>
+              </div>`).join('')}
+          </div>
+        </div>
+      `;
+    }
+    // Place skeleton after toolbar / reporting header
+    const toolbar = main.querySelector('[data-aside-toolbar-ready="1"]');
+    const toolbarRow = toolbar?.closest?.(':scope > *') || toolbar?.parentElement;
+    if (toolbarRow && toolbarRow.parentElement === main) {
+      if (toolbarRow.nextSibling !== root) {
+        toolbarRow.insertAdjacentElement('afterend', root);
+      }
+    } else if (!root.parentElement) {
+      main.appendChild(root);
+    }
+    return root;
+  }
+
+  function runCampaignSkeletonLoad() {
+    const main = document.querySelector('main');
+    if (!main) {
+      applyCampaignFilter();
+      return;
+    }
+    ensureCampaignBodyMark();
+    ensureSkeletonRoot();
+    if (state._skelTimer) {
+      clearTimeout(state._skelTimer);
+      state._skelTimer = null;
+    }
+    main.setAttribute('data-aside-campaign-loading', '1');
+    // 450–700ms, always under 1s
+    const ms = 480 + Math.floor(Math.random() * 180);
+    state._skelTimer = setTimeout(() => {
+      state._skelTimer = null;
+      applyCampaignFilter();
+      main.removeAttribute('data-aside-campaign-loading');
+    }, ms);
+  }
+
+  function weight() {
+    return WEIGHTS[state.campaignId] ?? 1;
+  }
+
+  function scaleInt(n, w, seed) {
+    if (w >= 0.999) return n;
+    // slight per-seed variance so cards don't all look identical ratios
+    const f = 0.85 + ((seed % 7) / 7) * 0.3; // 0.85–1.15
+    return Math.max(0, Math.round(n * w * f));
+  }
+
+  function isBigMetricNumber(el) {
+    if (!el || el.closest('#aside-campaign-filter')) return false;
+    if (el.closest('button[aria-haspopup="menu"]')) return false;
+    if (el.closest('#radius-reporting-inpage')) return false;
+    if (el.closest('nav')) return false;
+    if (el.closest('#radius-side-panel')) return false;
+    const text = (el.textContent || '').trim();
+    if (!/^\d{1,4}([,.]\d+)?%?$/.test(text) && !/^\d{1,3}(,\d{3})+$/.test(text)) return false;
+    // only large-ish display numbers
+    const style = window.getComputedStyle(el);
+    const fs = parseFloat(style.fontSize || '0');
+    if (fs < 16) return false;
+    // skip years-looking
+    if (/^20\d{2}$/.test(text)) return false;
+    return true;
+  }
+
+  function collectMetricNodes() {
+    const main = document.querySelector('main');
+    if (!main) return [];
+    const nodes = [];
+    const walk = (root) => {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT, null);
+      let n = walker.currentNode;
+      while (n) {
+        // leaf-ish text holders
+        if (n.childElementCount === 0 && isBigMetricNumber(n)) {
+          nodes.push(n);
+        } else if (
+          n.childElementCount === 1 &&
+          n.firstElementChild &&
+          n.firstElementChild.childElementCount === 0 &&
+          isBigMetricNumber(n.firstElementChild)
+        ) {
+          // skip; child will be caught
+        }
+        n = walker.nextNode();
+      }
+    };
+    walk(main);
+    return nodes;
+  }
+
+  function rememberBaseline(el) {
+    if (!state.baselines.has(el)) {
+      state.baselines.set(el, (el.textContent || '').trim());
+    }
+    return state.baselines.get(el);
+  }
+
+  function applyCampaignFilter() {
+    const w = weight();
+    const nodes = collectMetricNodes();
+    nodes.forEach((el, i) => {
+      const base = rememberBaseline(el);
+      el.setAttribute('data-aside-campaign-num', '1');
+      if (state.campaignId === 'all') {
+        el.textContent = base;
+        return;
+      }
+      const raw = base.replace(/,/g, '');
+      const isPct = raw.endsWith('%');
+      const num = parseFloat(raw);
+      if (Number.isNaN(num)) return;
+      let next = scaleInt(num, w, i + base.length);
+      // percentages keep mild compression not zero
+      if (isPct) next = Math.min(100, Math.max(1, next));
+      el.textContent = isPct ? `${next}%` : String(next);
+    });
+
+    // Activity list: hide a subset when filtered for drill-in feel
+    filterActivityItems();
+    filterPriorityClients();
+  }
+
+  function filterActivityItems() {
+    const items = Array.from(document.querySelectorAll('main [data-aside-activity-item]'));
+    if (!items.length) {
+      // tag if polish hasn't yet
+      const h2 = Array.from(document.querySelectorAll('main h2')).find((h) => /Metrics Activity/i.test(h.textContent || ''));
+      // no-op if not ready
+    }
+    const w = weight();
+    const keepEvery = state.campaignId === 'all' ? 1 : Math.max(1, Math.round(1 / Math.max(w, 0.15)));
+    items.forEach((el, i) => {
+      if (state.campaignId === 'all') {
+        // don't fight polish collapse — only clear campaign hide
+        if (el.getAttribute('data-aside-campaign-hide') === '1') {
+          el.removeAttribute('data-aside-campaign-hide');
+          if (el.getAttribute('data-aside-hidden') !== '1') {
+            el.style.removeProperty('display');
+          }
+        }
+        return;
+      }
+      const hide = i % keepEvery !== 0;
+      if (hide) {
+        el.setAttribute('data-aside-campaign-hide', '1');
+        el.style.setProperty('display', 'none', 'important');
+      } else {
+        el.removeAttribute('data-aside-campaign-hide');
+        if (el.getAttribute('data-aside-hidden') !== '1') {
+          el.style.removeProperty('display');
+        }
+      }
+    });
+  }
+
+  function filterPriorityClients() {
+    const h2 = Array.from(document.querySelectorAll('main h2')).find((h) => /Top Priority Clients/i.test(h.textContent || ''));
+    if (!h2) return;
+    // find list container near header
+    let section = h2.closest('section') || h2.parentElement?.parentElement;
+    if (!section) return;
+    const cards = Array.from(section.querySelectorAll('[class*="border"], [class*="card"], li, article')).filter((el) => {
+      const t = (el.textContent || '');
+      return t.length > 10 && t.length < 400 && /@|Buyer|Seller|Client|%|priority/i.test(t);
+    });
+    // fallback: direct children rows
+    const rows = cards.length ? cards : Array.from(section.children).slice(1);
+    const w = weight();
+    rows.forEach((el, i) => {
+      if (state.campaignId === 'all') {
+        el.style.removeProperty('display');
+        el.removeAttribute('data-aside-campaign-hide');
+        return;
+      }
+      const hide = i > 0 && (i % Math.max(1, Math.round(1 / Math.max(w, 0.2))) !== 0);
+      if (hide) {
+        el.setAttribute('data-aside-campaign-hide', '1');
+        el.style.setProperty('display', 'none', 'important');
+      } else {
+        el.removeAttribute('data-aside-campaign-hide');
+        el.style.removeProperty('display');
+      }
+    });
+  }
+
+  function boot() {
+    ensureMount();
+    // re-apply filter after React redraws numbers
+    applyCampaignFilter();
+  }
+
+  function schedule() {
+    boot();
+    [120, 350, 700, 1200, 2200, 4000].forEach((ms) => setTimeout(boot, ms));
+    if (!window.__asideCampaignObserver) {
+      let t = null;
+      window.__asideCampaignObserver = new MutationObserver(() => {
+        if (t) clearTimeout(t);
+        t = setTimeout(() => {
+          ensureMount();
+          // don't stomp skeleton / re-apply mid-load
+          if (document.querySelector('main')?.getAttribute('data-aside-campaign-loading') === '1') return;
+          applyCampaignFilter();
+        }, 100);
+      });
+      const root = document.querySelector('main') || document.body;
+      window.__asideCampaignObserver.observe(root, { childList: true, subtree: true });
+    }
+  }
+
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', schedule);
   else schedule();
 })();

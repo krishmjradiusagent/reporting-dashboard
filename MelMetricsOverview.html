@@ -910,10 +910,12 @@ Error generating stack: `+a.message+`
     }
     if (!controls) return;
 
-    if (controls.getAttribute('data-aside-toolbar-ready') === '1') {
-      // still ensure structure
+    // If React remounted stock buttons outside our track, rebuild
+    const trackExisting = document.getElementById('radius-scope-tabs');
+    if (controls.getAttribute('data-aside-toolbar-ready') === '1' && trackExisting && trackExisting.contains(myBtn) && trackExisting.contains(teamBtn)) {
       return;
     }
+    controls.removeAttribute('data-aside-toolbar-ready');
 
     const left = document.createElement('div');
     left.setAttribute('data-aside-toolbar-left', '1');
@@ -963,13 +965,15 @@ Error generating stack: `+a.message+`
     if (!root) return;
     const left = root.querySelector('.rr-header-left');
     const docIcon = root.querySelector('.rr-doc-icon');
-    const toggle = root.querySelector('.rr-sidebar-toggle');
+    let toggle = root.querySelector('.rr-sidebar-toggle');
     if (!left || !toggle) return;
-    if (!toggle.classList.contains('rr-leading-toggle')) {
-      toggle.classList.add('rr-leading-toggle');
+    toggle.classList.add('rr-leading-toggle');
+    if (toggle.parentElement !== left || left.firstElementChild !== toggle) {
       left.insertBefore(toggle, left.firstChild);
     }
     if (docIcon) docIcon.style.setProperty('display', 'none', 'important');
+    // if doc icon reappears as first child after toggle, hide all .rr-doc-icon
+    root.querySelectorAll('.rr-doc-icon').forEach((el) => el.style.setProperty('display', 'none', 'important'));
   }
 
   function placeCaption(heading, text) {
@@ -1257,11 +1261,21 @@ Error generating stack: `+a.message+`
   function schedule() {
     boot();
     // React/MagicPath late hydration
-    setTimeout(boot, 300);
-    setTimeout(boot, 1000);
-    setTimeout(boot, 2000);
+    [100, 300, 600, 1000, 2000, 4000].forEach((ms) => setTimeout(boot, ms));
+
+    // Re-apply when React rewrites DOM
+    if (!window.__asideMelObserver) {
+      let t = null;
+      window.__asideMelObserver = new MutationObserver(() => {
+        if (t) clearTimeout(t);
+        t = setTimeout(boot, 80);
+      });
+      const root = document.querySelector('main') || document.body;
+      window.__asideMelObserver.observe(root, { childList: true, subtree: true });
+    }
   }
 
+  // Allow re-entry on later boots: only style/script flag stays; structural ops are idempotent
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', schedule);
   else schedule();
 })();
